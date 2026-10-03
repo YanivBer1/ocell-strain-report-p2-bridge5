@@ -1,0 +1,2115 @@
+{
+  "sourceWorkbook": "WORK_FILE with EQU_line.xlsx",
+  "sourceSha256": "1ac477cd47eee7a928161c7db7886bbb7c10c72005306367de5ce16d9b76842e",
+  "diameterM": 1.2,
+  "depthsM": {
+    "head": 0,
+    "topFace": 22.9,
+    "bottomFace": 23.3
+  },
+  "depthSourceCells": {
+    "head": "Исходные данные!B17",
+    "topFace": "Исходные данные!B22",
+    "bottomFace": "Исходные данные!B23"
+  },
+  "profileDepthSourceCells": {
+    "head": "Напряжения!M56",
+    "topFace": "Напряжения!H56",
+    "bottomFace": "Напряжения!G56"
+  },
+  "sourceConventions": {
+    "head": "Напряжения!M57:M74 are zero numeric literals; retained as a source-workbook boundary condition, not a strain measurement.",
+    "faces": "Напряжения!G57:H74 use the full corresponding recorded load in both cell faces, matching A57:A74 and Raw Data stage loads.",
+    "baseline": "Stage0 uses the actual zero recorded load at Raw Data!A19 with the same source head-zero/face-load boundary convention; there is no dedicated initial-baseline profile row.",
+    "contradiction": "Напряжения!C4:C21 = B4:B21 /2, while source force-profile G57:H74 retain the full load. The source contains conflicting conventions; the explicit profile convention is reproduced, not independently certified."
+  },
+  "quantityInterpretation": "Head/cell points are source boundary force increments in the source plotting convention; they are not additional strain-gauge observations or independently calibrated hydraulic force measurements.",
+  "noForceLineAcrossCell": true,
+  "existingGaugeValuesUnchanged": true,
+  "boundaryIntervalsIncludedInOriginalTransferCsv": false,
+  "stages": [
+    {
+      "id": 0,
+      "load": 0.0,
+      "phase": "Baseline",
+      "sourceProfileRow": null,
+      "rawEndpointRow": 19,
+      "headForceTf": 0.0,
+      "topFaceForceTf": 0.0,
+      "bottomFaceForceTf": 0.0,
+      "points": [
+        {
+          "id": "PILE_HEAD",
+          "nameHe": "ראש הכלונס · תנאי גבול",
+          "depth": 0,
+          "force": 0.0,
+          "sourceCell": "Исходные данные!B17; Raw Data!A19; Напряжения!M57:M74 convention",
+          "depthSourceCell": "Исходные данные!B17",
+          "kind": "sourceBoundary"
+        },
+        {
+          "id": "CELL_TOP",
+          "nameHe": "פאה עליונה של התא · נקודת גבול",
+          "depth": 22.9,
+          "force": 0.0,
+          "sourceCell": "Raw Data!A19; Напряжения!H57:H74 convention",
+          "depthSourceCell": "Исходные данные!B22",
+          "kind": "sourceBoundary"
+        },
+        {
+          "id": "CELL_BOTTOM",
+          "nameHe": "פאה תחתונה של התא · נקודת גבול",
+          "depth": 23.3,
+          "force": 0.0,
+          "sourceCell": "Raw Data!A19; Напряжения!G57:G74 convention",
+          "depthSourceCell": "Исходные данные!B23",
+          "kind": "sourceBoundary"
+        }
+      ],
+      "intervals": [
+        {
+          "name": "Head–SG1",
+          "segment": "Upper",
+          "length": 9.7,
+          "deltaForce": 0.0,
+          "shaftKpa": 0.0,
+          "review": false,
+          "boundaryDerived": true,
+          "source": "boundary",
+          "fromDepth": 0,
+          "toDepth": 9.7,
+          "fromId": "PILE_HEAD",
+          "toId": "SG1",
+          "fromForceTf": 0.0,
+          "toForceTf": 0.0,
+          "gaugeReview": false,
+          "negativeTransfer": false,
+          "reviewReasons": [
+            "Source-workbook boundary convention; independent hydraulic calibration/physical load interpretation unverified"
+          ],
+          "sourceProfileRow": null
+        },
+        {
+          "name": "SG4–CellTop",
+          "segment": "Upper",
+          "length": 1.7,
+          "deltaForce": 0.0,
+          "shaftKpa": 0.0,
+          "review": false,
+          "boundaryDerived": true,
+          "source": "boundary",
+          "fromDepth": 21.2,
+          "toDepth": 22.9,
+          "fromId": "SG4",
+          "toId": "CELL_TOP",
+          "fromForceTf": 0.0,
+          "toForceTf": 0.0,
+          "gaugeReview": false,
+          "negativeTransfer": false,
+          "reviewReasons": [
+            "Source-workbook boundary convention; independent hydraulic calibration/physical load interpretation unverified"
+          ],
+          "sourceProfileRow": null
+        },
+        {
+          "name": "CellBottom–SG5",
+          "segment": "Lower",
+          "length": 0.8,
+          "deltaForce": 0.0,
+          "shaftKpa": 0.0,
+          "review": false,
+          "boundaryDerived": true,
+          "source": "boundary",
+          "fromDepth": 23.3,
+          "toDepth": 24.1,
+          "fromId": "CELL_BOTTOM",
+          "toId": "SG5",
+          "fromForceTf": 0.0,
+          "toForceTf": 0.0,
+          "gaugeReview": false,
+          "negativeTransfer": false,
+          "reviewReasons": [
+            "Source-workbook boundary convention; independent hydraulic calibration/physical load interpretation unverified"
+          ],
+          "sourceProfileRow": null
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "load": 45.0,
+      "phase": "Loading",
+      "sourceProfileRow": 57,
+      "rawEndpointRow": 24,
+      "headForceTf": 0.0,
+      "topFaceForceTf": 45.0,
+      "bottomFaceForceTf": 45.0,
+      "points": [
+        {
+          "id": "PILE_HEAD",
+          "nameHe": "ראש הכלונס · תנאי גבול",
+          "depth": 0,
+          "force": 0.0,
+          "sourceCell": "Напряжения!M57",
+          "depthSourceCell": "Исходные данные!B17",
+          "kind": "sourceBoundary"
+        },
+        {
+          "id": "CELL_TOP",
+          "nameHe": "פאה עליונה של התא · נקודת גבול",
+          "depth": 22.9,
+          "force": 45.0,
+          "sourceCell": "Напряжения!H57",
+          "depthSourceCell": "Исходные данные!B22",
+          "kind": "sourceBoundary"
+        },
+        {
+          "id": "CELL_BOTTOM",
+          "nameHe": "פאה תחתונה של התא · נקודת גבול",
+          "depth": 23.3,
+          "force": 45.0,
+          "sourceCell": "Напряжения!G57",
+          "depthSourceCell": "Исходные данные!B23",
+          "kind": "sourceBoundary"
+        }
+      ],
+      "intervals": [
+        {
+          "name": "Head–SG1",
+          "segment": "Upper",
+          "length": 9.7,
+          "deltaForce": 9.705129498704554,
+          "shaftKpa": 2.602670306290328,
+          "review": false,
+          "boundaryDerived": true,
+          "source": "boundary",
+          "fromDepth": 0,
+          "toDepth": 9.7,
+          "fromId": "PILE_HEAD",
+          "toId": "SG1",
+          "fromForceTf": 0.0,
+          "toForceTf": 9.705129498704554,
+          "gaugeReview": false,
+          "negativeTransfer": false,
+          "reviewReasons": [
+            "Source-workbook boundary convention; independent hydraulic calibration/physical load interpretation unverified"
+          ],
+          "sourceProfileRow": 57
+        },
+        {
+          "name": "SG4–CellTop",
+          "segment": "Upper",
+          "length": 1.7,
+          "deltaForce": -14.344108014514553,
+          "shaftKpa": -21.94897189309798,
+          "review": true,
+          "boundaryDerived": true,
+          "source": "boundary",
+          "fromDepth": 21.2,
+          "toDepth": 22.9,
+          "fromId": "SG4",
+          "toId": "CELL_TOP",
+          "fromForceTf": 59.34410801451455,
+          "toForceTf": 45.0,
+          "gaugeReview": false,
+          "negativeTransfer": true,
+          "reviewReasons": [
+            "Source-workbook boundary convention; independent hydraulic calibration/physical load interpretation unverified",
+            "Negative boundary-derived transfer retained"
+          ],
+          "sourceProfileRow": 57
+        },
+        {
+          "name": "CellBottom–SG5",
+          "segment": "Lower",
+          "length": 0.8,
+          "deltaForce": -29.241043615102598,
+          "shaftKpa": -95.0807148858274,
+          "review": true,
+          "boundaryDerived": true,
+          "source": "boundary",
+          "fromDepth": 23.3,
+          "toDepth": 24.1,
+          "fromId": "CELL_BOTTOM",
+          "toId": "SG5",
+          "fromForceTf": 45.0,
+          "toForceTf": 74.2410436151026,
+          "gaugeReview": false,
+          "negativeTransfer": true,
+          "reviewReasons": [
+            "Source-workbook boundary convention; independent hydraulic calibration/physical load interpretation unverified",
+            "Negative boundary-derived transfer retained"
+          ],
+          "sourceProfileRow": 57
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "load": 90.0,
+      "phase": "Loading",
+      "sourceProfileRow": 58,
+      "rawEndpointRow": 29,
+      "headForceTf": 0.0,
+      "topFaceForceTf": 90.0,
+      "bottomFaceForceTf": 90.0,
+      "points": [
+        {
+          "id": "PILE_HEAD",
+          "nameHe": "ראש הכלונס · תנאי גבול",
+          "depth": 0,
+          "force": 0.0,
+          "sourceCell": "Напряжения!M58",
+          "depthSourceCell": "Исходные данные!B17",
+          "kind": "sourceBoundary"
+        },
+        {
+          "id": "CELL_TOP",
+          "nameHe": "פאה עליונה של התא · נקודת גבול",
+          "depth": 22.9,
+          "force": 90.0,
+          "sourceCell": "Напряжения!H58",
+          "depthSourceCell": "Исходные данные!B22",
+          "kind": "sourceBoundary"
+        },
+        {
+          "id": "CELL_BOTTOM",
+          "nameHe": "פאה תחתונה של התא · נקודת גבול",
+          "depth": 23.3,
+          "force": 90.0,
+          "sourceCell": "Напряжения!G58",
+          "depthSourceCell": "Исходные данные!B23",
+          "kind": "sourceBoundary"
+        }
+      ],
+      "intervals": [
+        {
+          "name": "Head–SG1",
+          "segment": "Upper",
+          "length": 9.7,
+          "deltaForce": 15.413319959757729,
+          "shaftKpa": 4.133462638078982,
+          "review": false,
+          "boundaryDerived": true,
+          "source": "boundary",
+          "fromDepth": 0,
+          "toDepth": 9.7,
+          "fromId": "PILE_HEAD",
+          "toId": "SG1",
+          "fromForceTf": 0.0,
+          "toForceTf": 15.413319959757729,
+          "gaugeReview": false,
+          "negativeTransfer": false,
+          "reviewReasons": [
+            "Source-workbook boundary convention; independent hydraulic calibration/physical load interpretation unverified"
+          ],
+          "sourceProfileRow": 58
+        },
+        {
+          "name": "SG4–CellTop",
+          "segment": "Upper",
+          "length": 1.7,
+          "deltaForce": 15.629098288786295,
+          "shaftKpa": 23.915229772943512,
+          "review": false,
+          "boundaryDerived": true,
+          "source": "boundary",
+          "fromDepth": 21.2,
+          "toDepth": 22.9,
+          "fromId": "SG4",
+          "toId": "CELL_TOP",
+          "fromForceTf": 74.3709017112137,
+          "toForceTf": 90.0,
+          "gaugeReview": false,
+          "negativeTransfer": false,
+          "reviewReasons": [
+            "Source-workbook boundary convention; independent hydraulic calibration/physical load interpretation unverified"
+          ],
+          "sourceProfileRow": 58
+        },
+        {
+          "name": "CellBottom–SG5",
+          "segment": "Lower",
+          "length": 0.8,
+          "deltaForce": 6.087821114443869,
+          "shaftKpa": 19.79527103332925,
+          "review": false,
+          "boundaryDerived": true,
+          "source": "boundary",
+          "fromDepth": 23.3,
+          "toDepth": 24.1,
+          "fromId": "CELL_BOTTOM",
+          "toId": "SG5",
+          "fromForceTf": 90.0,
+          "toForceTf": 83.91217888555613,
+          "gaugeReview": false,
+          "negativeTransfer": false,
+          "reviewReasons": [
+            "Source-workbook boundary convention; independent hydraulic calibration/physical load interpretation unverified"
+          ],
+          "sourceProfileRow": 58
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "load": 135.0,
+      "phase": "Loading",
+      "sourceProfileRow": 59,
+      "rawEndpointRow": 33,
+      "headForceTf": 0.0,
+      "topFaceForceTf": 135.0,
+      "bottomFaceForceTf": 135.0,
+      "points": [
+        {
+          "id": "PILE_HEAD",
+          "nameHe": "ראש הכלונס · תנאי גבול",
+          "depth": 0,
+          "force": 0.0,
+          "sourceCell": "Напряжения!M59",
+          "depthSourceCell": "Исходные данные!B17",
+          "kind": "sourceBoundary"
+        },
+        {
+          "id": "CELL_TOP",
+          "nameHe": "פאה עליונה של התא · נקודת גבול",
+          "depth": 22.9,
+          "force": 135.0,
+          "sourceCell": "Напряжения!H59",
+          "depthSourceCell": "Исходные данные!B22",
+          "kind": "sourceBoundary"
+        },
+        {
+          "id": "CELL_BOTTOM",
+          "nameHe": "פאה תחתונה של התא · נקודת גבול",
+          "depth": 23.3,
+          "force": 135.0,
+          "sourceCell": "Напряжения!G59",
+          "depthSourceCell": "Исходные данные!B23",
+          "kind": "sourceBoundary"
+        }
+      ],
+      "intervals": [
+        {
+          "name": "Head–SG1",
+          "segment": "Upper",
+          "length": 9.7,
+          "deltaForce": 20.40369927029626,
+          "shaftKpa": 5.4717561714520215,
+          "review": false,
+          "boundaryDerived": true,
+          "source": "boundary",
+          "fromDepth": 0,
+          "toDepth": 9.7,
+          "fromId": "PILE_HEAD",
+          "toId": "SG1",
+          "fromForceTf": 0.0,
+          "toForceTf": 20.40369927029626,
+          "gaugeReview": false,
+          "negativeTransfer": false,
+          "reviewReasons": [
+            "Source-workbook boundary convention; independent hydraulic calibration/physical load interpretation unverified"
+          ],
+          "sourceProfileRow": 59
+        },
+        {
+          "name": "SG4–CellTop",
+          "segment": "Upper",
+          "length": 1.7,
+          "deltaForce": 36.92193175226542,
+          "shaftKpa": 56.49695620315514,
+          "review": true,
+          "boundaryDerived": true,
+          "source": "boundary",
+          "fromDepth": 21.2,
+          "toDepth": 22.9,
+          "fromId": "SG4",
+          "toId": "CELL_TOP",
+          "fromForceTf": 98.07806824773458,
+          "toForceTf": 135.0,
+          "gaugeReview": true,
+          "negativeTransfer": false,
+          "reviewReasons": [
+            "Source-workbook boundary convention; independent hydraulic calibration/physical load interpretation unverified",
+            "Strain-gauge level has a review flag"
+          ],
+          "sourceProfileRow": 59
+        },
+        {
+          "name": "CellBottom–SG5",
+          "segment": "Lower",
+          "length": 0.8,
+          "deltaForce": 25.16538857271246,
+          "shaftKpa": 81.82824003714127,
+          "review": false,
+          "boundaryDerived": true,
+          "source": "boundary",
+          "fromDepth": 23.3,
+          "toDepth": 24.1,
+          "fromId": "CELL_BOTTOM",
+          "toId": "SG5",
+          "fromForceTf": 135.0,
+          "toForceTf": 109.83461142728754,
+          "gaugeReview": false,
+          "negativeTransfer": false,
+          "reviewReasons": [
+            "Source-workbook boundary convention; independent hydraulic calibration/physical load interpretation unverified"
+          ],
+          "sourceProfileRow": 59
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "load": 180.0,
+      "phase": "Loading",
+      "sourceProfileRow": 60,
+      "rawEndpointRow": 41,
+      "headForceTf": 0.0,
+      "topFaceForceTf": 180.0,
+      "bottomFaceForceTf": 180.0,
+      "points": [
+        {
+          "id": "PILE_HEAD",
+          "nameHe": "ראש הכלונס · תנאי גבול",
+          "depth": 0,
+          "force": 0.0,
+          "sourceCell": "Напряжения!M60",
+          "depthSourceCell": "Исходные данные!B17",
+          "kind": "sourceBoundary"
+        },
+        {
+          "id": "CELL_TOP",
+          "nameHe": "פאה עליונה של התא · נקודת גבול",
+          "depth": 22.9,
+          "force": 180.0,
+          "sourceCell": "Напряжения!H60",
+          "depthSourceCell": "Исходные данные!B22",
+          "kind": "sourceBoundary"
+        },
+        {
+          "id": "CELL_BOTTOM",
+          "nameHe": "פאה תחתונה של התא · נקודת גבול",
+          "depth": 23.3,
+          "force": 180.0,
+          "sourceCell": "Напряжения!G60",
+          "depthSourceCell": "Исходные данные!B23",
+          "kind": "sourceBoundary"
+        }
+      ],
+      "intervals": [
+        {
+          "name": "Head–SG1",
+          "segment": "Upper",
+          "length": 9.7,
+          "deltaForce": 25.896739902347743,
+          "shaftKpa": 6.94485075985447,
+          "review": false,
+          "boundaryDerived": true,
+          "source": "boundary",
+          "fromDepth": 0,
+          "toDepth": 9.7,
+          "fromId": "PILE_HEAD",
+          "toId": "SG1",
+          "fromForceTf": 0.0,
+          "toForceTf": 25.896739902347743,
+          "gaugeReview": false,
+          "negativeTransfer": false,
+          "reviewReasons": [
+            "Source-workbook boundary convention; independent hydraulic calibration/physical load interpretation unverified"
+          ],
+          "sourceProfileRow": 60
+        },
+        {
+          "name": "SG4–CellTop",
+          "segment": "Upper",
+          "length": 1.7,
+          "deltaForce": 58.164322513935915,
+          "shaftKpa": 89.00149655507671,
+          "review": true,
+          "boundaryDerived": true,
+          "source": "boundary",
+          "fromDepth": 21.2,
+          "toDepth": 22.9,
+          "fromId": "SG4",
+          "toId": "CELL_TOP",
+          "fromForceTf": 121.83567748606409,
+          "toForceTf": 180.0,
+          "gaugeReview": true,
+          "negativeTransfer": false,
+          "reviewReasons": [
+            "Source-workbook boundary convention; independent hydraulic calibration/physical load interpretation unverified",
+            "Strain-gauge level has a review flag"
+          ],
+          "sourceProfileRow": 60
+        },
+        {
+          "name": "CellBottom–SG5",
+          "segment": "Lower",
+          "length": 0.8,
+          "deltaForce": 42.55525450173175,
+          "shaftKpa": 138.37344772753534,
+          "review": false,
+          "boundaryDerived": true,
+          "source": "boundary",
+          "fromDepth": 23.3,
+          "toDepth": 24.1,
+          "fromId": "CELL_BOTTOM",
+          "toId": "SG5",
+          "fromForceTf": 180.0,
+          "toForceTf": 137.44474549826825,
+          "gaugeReview": false,
+          "negativeTransfer": false,
+          "reviewReasons": [
+            "Source-workbook boundary convention; independent hydraulic calibration/physical load interpretation unverified"
+          ],
+          "sourceProfileRow": 60
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "load": 225.0,
+      "phase": "Loading",
+      "sourceProfileRow": 61,
+      "rawEndpointRow": 45,
+      "headForceTf": 0.0,
+      "topFaceForceTf": 225.0,
+      "bottomFaceForceTf": 225.0,
+      "points": [
+        {
+          "id": "PILE_HEAD",
+          "nameHe": "ראש הכלונס · תנאי גבול",
+          "depth": 0,
+          "force": 0.0,
+          "sourceCell": "Напряжения!M61",
+          "depthSourceCell": "Исходные данные!B17",
+          "kind": "sourceBoundary"
+        },
+        {
+          "id": "CELL_TOP",
+          "nameHe": "פאה עליונה של התא · נקודת גבול",
+          "depth": 22.9,
+          "force": 225.0,
+          "sourceCell": "Напряжения!H61",
+          "depthSourceCell": "Исходные данные!B22",
+          "kind": "sourceBoundary"
+        },
+        {
+          "id": "CELL_BOTTOM",
+          "nameHe": "פאה תחתונה של התא · נקודת גבול",
+          "depth": 23.3,
+          "force": 225.0,
+          "sourceCell": "Напряжения!G61",
+          "depthSourceCell": "Исходные данные!B23",
+          "kind": "sourceBoundary"
+        }
+      ],
+      "intervals": [
+        {
+          "name": "Head–SG1",
+          "segment": "Upper",
+          "length": 9.7,
+          "deltaForce": 34.012789791062296,
+          "shaftKpa": 9.121370099709528,
+          "review": false,
+          "boundaryDerived": true,
+          "source": "boundary",
+          "fromDepth": 0,
+          "toDepth": 9.7,
+          "fromId": "PILE_HEAD",
+          "toId": "SG1",
+          "fromForceTf": 0.0,
+          "toForceTf": 34.012789791062296,
+          "gaugeReview": false,
+          "negativeTransfer": false,
+          "reviewReasons": [
+            "Source-workbook boundary convention; independent hydraulic calibration/physical load interpretation unverified"
+          ],
+          "sourceProfileRow": 61
+        },
+        {
+          "name": "SG4–CellTop",
+          "segment": "Upper",
+          "length": 1.7,
+          "deltaForce": 70.3395140306742,
+          "shaftKpa": 107.63165021284094,
+          "review": false,
+          "boundaryDerived": true,
+          "source": "boundary",
+          "fromDepth": 21.2,
+          "toDepth": 22.9,
+          "fromId": "SG4",
+          "toId": "CELL_TOP",
+          "fromForceTf": 154.6604859693258,
+          "toForceTf": 225.0,
+          "gaugeReview": false,
+          "negativeTransfer": false,
+          "reviewReasons": [
+            "Source-workbook boundary convention; independent hydraulic calibration/physical load interpretation unverified"
+          ],
+          "sourceProfileRow": 61
+        },
+        {
+          "name": "CellBottom–SG5",
+          "segment": "Lower",
+          "length": 0.8,
+          "deltaForce": 49.39430436399371,
+          "shaftKpa": 160.61142796528017,
+          "review": false,
+          "boundaryDerived": true,
+          "source": "boundary",
+          "fromDepth": 23.3,
+          "toDepth": 24.1,
+          "fromId": "CELL_BOTTOM",
+          "toId": "SG5",
+          "fromForceTf": 225.0,
+          "toForceTf": 175.6056956360063,
+          "gaugeReview": false,
+          "negativeTransfer": false,
+          "reviewReasons": [
+            "Source-workbook boundary convention; independent hydraulic calibration/physical load interpretation unverified"
+          ],
+          "sourceProfileRow": 61
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "load": 270.0,
+      "phase": "Loading",
+      "sourceProfileRow": 62,
+      "rawEndpointRow": 49,
+      "headForceTf": 0.0,
+      "topFaceForceTf": 270.0,
+      "bottomFaceForceTf": 270.0,
+      "points": [
+        {
+          "id": "PILE_HEAD",
+          "nameHe": "ראש הכלונס · תנאי גבול",
+          "depth": 0,
+          "force": 0.0,
+          "sourceCell": "Напряжения!M62",
+          "depthSourceCell": "Исходные данные!B17",
+          "kind": "sourceBoundary"
+        },
+        {
+          "id": "CELL_TOP",
+          "nameHe": "פאה עליונה של התא · נקודת גבול",
+          "depth": 22.9,
+          "force": 270.0,
+          "sourceCell": "Напряжения!H62",
+          "depthSourceCell": "Исходные данные!B22",
+          "kind": "sourceBoundary"
+        },
+        {
+          "id": "CELL_BOTTOM",
+          "nameHe": "פאה תחתונה של התא · נקודת גבול",
+          "depth": 23.3,
+          "force": 270.0,
+          "sourceCell": "Напряжения!G62",
+          "depthSourceCell": "Исходные данные!B23",
+          "kind": "sourceBoundary"
+        }
+      ],
+      "intervals": [
+        {
+          "name": "Head–SG1",
+          "segment": "Upper",
+          "length": 9.7,
+          "deltaForce": 40.81136483904781,
+          "shaftKpa": 10.944576003849201,
+          "review": false,
+          "boundaryDerived": true,
+          "source": "boundary",
+          "fromDepth": 0,
+          "toDepth": 9.7,
+          "fromId": "PILE_HEAD",
+          "toId": "SG1",
+          "fromForceTf": 0.0,
+          "toForceTf": 40.81136483904781,
+          "gaugeReview": false,
+          "negativeTransfer": false,
+          "reviewReasons": [
+            "Source-workbook boundary convention; independent hydraulic calibration/physical load interpretation unverified"
+          ],
+          "sourceProfileRow": 62
+        },
+        {
+          "name": "SG4–CellTop",
+          "segment": "Upper",
+          "length": 1.7,
+          "deltaForce": 87.83453474786384,
+          "shaftKpa": 134.40206476927077,
+          "review": false,
+          "boundaryDerived": true,
+          "source": "boundary",
+          "fromDepth": 21.2,
+          "toDepth": 22.9,
+          "fromId": "SG4",
+          "toId": "CELL_TOP",
+          "fromForceTf": 182.16546525213616,
+          "toForceTf": 270.0,
+          "gaugeReview": false,
+          "negativeTransfer": false,
+          "reviewReasons": [
+            "Source-workbook boundary convention; independent hydraulic calibration/physical load interpretation unverified"
+          ],
+          "sourceProfileRow": 62
+        },
+        {
+          "name": "CellBottom–SG5",
+          "segment": "Lower",
+          "length": 0.8,
+          "deltaForce": 60.64834792292319,
+          "shaftKpa": 197.20528285719638,
+          "review": false,
+          "boundaryDerived": true,
+          "source": "boundary",
+          "fromDepth": 23.3,
+          "toDepth": 24.1,
+          "fromId": "CELL_BOTTOM",
+          "toId": "SG5",
+          "fromForceTf": 270.0,
+          "toForceTf": 209.3516520770768,
+          "gaugeReview": false,
+          "negativeTransfer": false,
+          "reviewReasons": [
+            "Source-workbook boundary convention; independent hydraulic calibration/physical load interpretation unverified"
+          ],
+          "sourceProfileRow": 62
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "load": 315.0,
+      "phase": "Loading",
+      "sourceProfileRow": 63,
+      "rawEndpointRow": 53,
+      "headForceTf": 0.0,
+      "topFaceForceTf": 315.0,
+      "bottomFaceForceTf": 315.0,
+      "points": [
+        {
+          "id": "PILE_HEAD",
+          "nameHe": "ראש הכלונס · תנאי גבול",
+          "depth": 0,
+          "force": 0.0,
+          "sourceCell": "Напряжения!M63",
+          "depthSourceCell": "Исходные данные!B17",
+          "kind": "sourceBoundary"
+        },
+        {
+          "id": "CELL_TOP",
+          "nameHe": "פאה עליונה של התא · נקודת גבול",
+          "depth": 22.9,
+          "force": 315.0,
+          "sourceCell": "Напряжения!H63",
+          "depthSourceCell": "Исходные данные!B22",
+          "kind": "sourceBoundary"
+        },
+        {
+          "id": "CELL_BOTTOM",
+          "nameHe": "פאה תחתונה של התא · נקודת גבול",
+          "depth": 23.3,
+          "force": 315.0,
+          "sourceCell": "Напряжения!G63",
+          "depthSourceCell": "Исходные данные!B23",
+          "kind": "sourceBoundary"
+        }
+      ],
+      "intervals": [
+        {
+          "name": "Head–SG1",
+          "segment": "Upper",
+          "length": 9.7,
+          "deltaForce": 50.5579947555824,
+          "shaftKpa": 13.55837567273065,
+          "review": false,
+          "boundaryDerived": true,
+          "source": "boundary",
+          "fromDepth": 0,
+          "toDepth": 9.7,
+          "fromId": "PILE_HEAD",
+          "toId": "SG1",
+          "fromForceTf": 0.0,
+          "toForceTf": 50.5579947555824,
+          "gaugeReview": false,
+          "negativeTransfer": false,
+          "reviewReasons": [
+            "Source-workbook boundary convention; independent hydraulic calibration/physical load interpretation unverified"
+          ],
+          "sourceProfileRow": 63
+        },
+        {
+          "name": "SG4–CellTop",
+          "segment": "Upper",
+          "length": 1.7,
+          "deltaForce": 98.69929003218269,
+          "shaftKpa": 151.02702382002514,
+          "review": false,
+          "boundaryDerived": true,
+          "source": "boundary",
+          "fromDepth": 21.2,
+          "toDepth": 22.9,
+          "fromId": "SG4",
+          "toId": "CELL_TOP",
+          "fromForceTf": 216.3007099678173,
+          "toForceTf": 315.0,
+          "gaugeReview": false,
+          "negativeTransfer": false,
+          "reviewReasons": [
+            "Source-workbook boundary convention; independent hydraulic calibration/physical load interpretation unverified"
+          ],
+          "sourceProfileRow": 63
+        },
+        {
+          "name": "CellBottom–SG5",
+          "segment": "Lower",
+          "length": 0.8,
+          "deltaForce": 66.78534755967215,
+          "shaftKpa": 217.16046367758196,
+          "review": false,
+          "boundaryDerived": true,
+          "source": "boundary",
+          "fromDepth": 23.3,
+          "toDepth": 24.1,
+          "fromId": "CELL_BOTTOM",
+          "toId": "SG5",
+          "fromForceTf": 315.0,
+          "toForceTf": 248.21465244032785,
+          "gaugeReview": false,
+          "negativeTransfer": false,
+          "reviewReasons": [
+            "Source-workbook boundary convention; independent hydraulic calibration/physical load interpretation unverified"
+          ],
+          "sourceProfileRow": 63
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "load": 360.0,
+      "phase": "Loading",
+      "sourceProfileRow": 64,
+      "rawEndpointRow": 59,
+      "headForceTf": 0.0,
+      "topFaceForceTf": 360.0,
+      "bottomFaceForceTf": 360.0,
+      "points": [
+        {
+          "id": "PILE_HEAD",
+          "nameHe": "ראש הכלונס · תנאי גבול",
+          "depth": 0,
+          "force": 0.0,
+          "sourceCell": "Напряжения!M64",
+          "depthSourceCell": "Исходные данные!B17",
+          "kind": "sourceBoundary"
+        },
+        {
+          "id": "CELL_TOP",
+          "nameHe": "פאה עליונה של התא · נקודת גבול",
+          "depth": 22.9,
+          "force": 360.0,
+          "sourceCell": "Напряжения!H64",
+          "depthSourceCell": "Исходные данные!B22",
+          "kind": "sourceBoundary"
+        },
+        {
+          "id": "CELL_BOTTOM",
+          "nameHe": "פאה תחתונה של התא · נקודת גבול",
+          "depth": 23.3,
+          "force": 360.0,
+          "sourceCell": "Напряжения!G64",
+          "depthSourceCell": "Исходные данные!B23",
+          "kind": "sourceBoundary"
+        }
+      ],
+      "intervals": [
+        {
+          "name": "Head–SG1",
+          "segment": "Upper",
+          "length": 9.7,
+          "deltaForce": 65.21687321155865,
+          "shaftKpa": 17.489516177963576,
+          "review": false,
+          "boundaryDerived": true,
+          "source": "boundary",
+          "fromDepth": 0,
+          "toDepth": 9.7,
+          "fromId": "PILE_HEAD",
+          "toId": "SG1",
+          "fromForceTf": 0.0,
+          "toForceTf": 65.21687321155865,
+          "gaugeReview": false,
+          "negativeTransfer": false,
+          "reviewReasons": [
+            "Source-workbook boundary convention; independent hydraulic calibration/physical load interpretation unverified"
+          ],
+          "sourceProfileRow": 64
+        },
+        {
+          "name": "SG4–CellTop",
+          "segment": "Upper",
+          "length": 1.7,
+          "deltaForce": 93.3485369858833,
+          "shaftKpa": 142.83944407639143,
+          "review": true,
+          "boundaryDerived": true,
+          "source": "boundary",
+          "fromDepth": 21.2,
+          "toDepth": 22.9,
+          "fromId": "SG4",
+          "toId": "CELL_TOP",
+          "fromForceTf": 266.6514630141167,
+          "toForceTf": 360.0,
+          "gaugeReview": true,
+          "negativeTransfer": false,
+          "reviewReasons": [
+            "Source-workbook boundary convention; independent hydraulic calibration/physical load interpretation unverified",
+            "Strain-gauge level has a review flag"
+          ],
+          "sourceProfileRow": 64
+        },
+        {
+          "name": "CellBottom–SG5",
+          "segment": "Lower",
+          "length": 0.8,
+          "deltaForce": 37.52224095512349,
+          "shaftKpa": 122.00800836974149,
+          "review": true,
+          "boundaryDerived": true,
+          "source": "boundary",
+          "fromDepth": 23.3,
+          "toDepth": 24.1,
+          "fromId": "CELL_BOTTOM",
+          "toId": "SG5",
+          "fromForceTf": 360.0,
+          "toForceTf": 322.4777590448765,
+          "gaugeReview": true,
+          "negativeTransfer": false,
+          "reviewReasons": [
+            "Source-workbook boundary convention; independent hydraulic calibration/physical load interpretation unverified",
+            "Strain-gauge level has a review flag"
+          ],
+          "sourceProfileRow": 64
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "load": 405.0,
+      "phase": "Loading",
+      "sourceProfileRow": 65,
+      "rawEndpointRow": 66,
+      "headForceTf": 0.0,
+      "topFaceForceTf": 405.0,
+      "bottomFaceForceTf": 405.0,
+      "points": [
+        {
+          "id": "PILE_HEAD",
+          "nameHe": "ראש הכלונס · תנאי גבול",
+          "depth": 0,
+          "force": 0.0,
+          "sourceCell": "Напряжения!M65",
+          "depthSourceCell": "Исходные данные!B17",
+          "kind": "sourceBoundary"
+        },
+        {
+          "id": "CELL_TOP",
+          "nameHe": "פאה עליונה של התא · נקודת גבול",
+          "depth": 22.9,
+          "force": 405.0,
+          "sourceCell": "Напряжения!H65",
+          "depthSourceCell": "Исходные данные!B22",
+          "kind": "sourceBoundary"
+        },
+        {
+          "id": "CELL_BOTTOM",
+          "nameHe": "פאה תחתונה של התא · נקודת גבול",
+          "depth": 23.3,
+          "force": 405.0,
+          "sourceCell": "Напряжения!G65",
+          "depthSourceCell": "Исходные данные!B23",
+          "kind": "sourceBoundary"
+        }
+      ],
+      "intervals": [
+        {
+          "name": "Head–SG1",
+          "segment": "Upper",
+          "length": 9.7,
+          "deltaForce": 76.00991305922376,
+          "shaftKpa": 20.383936528549917,
+          "review": false,
+          "boundaryDerived": true,
+          "source": "boundary",
+          "fromDepth": 0,
+          "toDepth": 9.7,
+          "fromId": "PILE_HEAD",
+          "toId": "SG1",
+          "fromForceTf": 0.0,
+          "toForceTf": 76.00991305922376,
+          "gaugeReview": false,
+          "negativeTransfer": false,
+          "reviewReasons": [
+            "Source-workbook boundary convention; independent hydraulic calibration/physical load interpretation unverified"
+          ],
+          "sourceProfileRow": 65
+        },
+        {
+          "name": "SG4–CellTop",
+          "segment": "Upper",
+          "length": 1.7,
+          "deltaForce": 101.0165058189167,
+          "shaftKpa": 154.57276567597066,
+          "review": true,
+          "boundaryDerived": true,
+          "source": "boundary",
+          "fromDepth": 21.2,
+          "toDepth": 22.9,
+          "fromId": "SG4",
+          "toId": "CELL_TOP",
+          "fromForceTf": 303.9834941810833,
+          "toForceTf": 405.0,
+          "gaugeReview": true,
+          "negativeTransfer": false,
+          "reviewReasons": [
+            "Source-workbook boundary convention; independent hydraulic calibration/physical load interpretation unverified",
+            "Strain-gauge level has a review flag"
+          ],
+          "sourceProfileRow": 65
+        },
+        {
+          "name": "CellBottom–SG5",
+          "segment": "Lower",
+          "length": 0.8,
+          "deltaForce": 32.1994183336343,
+          "shaftKpa": 104.70022049720966,
+          "review": true,
+          "boundaryDerived": true,
+          "source": "boundary",
+          "fromDepth": 23.3,
+          "toDepth": 24.1,
+          "fromId": "CELL_BOTTOM",
+          "toId": "SG5",
+          "fromForceTf": 405.0,
+          "toForceTf": 372.8005816663657,
+          "gaugeReview": true,
+          "negativeTransfer": false,
+          "reviewReasons": [
+            "Source-workbook boundary convention; independent hydraulic calibration/physical load interpretation unverified",
+            "Strain-gauge level has a review flag"
+          ],
+          "sourceProfileRow": 65
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "load": 450.0,
+      "phase": "Loading",
+      "sourceProfileRow": 66,
+      "rawEndpointRow": 72,
+      "headForceTf": 0.0,
+      "topFaceForceTf": 450.0,
+      "bottomFaceForceTf": 450.0,
+      "points": [
+        {
+          "id": "PILE_HEAD",
+          "nameHe": "ראש הכלונס · תנאי גבול",
+          "depth": 0,
+          "force": 0.0,
+          "sourceCell": "Напряжения!M66",
+          "depthSourceCell": "Исходные данные!B17",
+          "kind": "sourceBoundary"
+        },
+        {
+          "id": "CELL_TOP",
+          "nameHe": "פאה עליונה של התא · נקודת גבול",
+          "depth": 22.9,
+          "force": 450.0,
+          "sourceCell": "Напряжения!H66",
+          "depthSourceCell": "Исходные данные!B22",
+          "kind": "sourceBoundary"
+        },
+        {
+          "id": "CELL_BOTTOM",
+          "nameHe": "פאה תחתונה של התא · נקודת גבול",
+          "depth": 23.3,
+          "force": 450.0,
+          "sourceCell": "Напряжения!G66",
+          "depthSourceCell": "Исходные данные!B23",
+          "kind": "sourceBoundary"
+        }
+      ],
+      "intervals": [
+        {
+          "name": "Head–SG1",
+          "segment": "Upper",
+          "length": 9.7,
+          "deltaForce": 87.03672295632451,
+          "shaftKpa": 23.341048094770976,
+          "review": false,
+          "boundaryDerived": true,
+          "source": "boundary",
+          "fromDepth": 0,
+          "toDepth": 9.7,
+          "fromId": "PILE_HEAD",
+          "toId": "SG1",
+          "fromForceTf": 0.0,
+          "toForceTf": 87.03672295632451,
+          "gaugeReview": false,
+          "negativeTransfer": false,
+          "reviewReasons": [
+            "Source-workbook boundary convention; independent hydraulic calibration/physical load interpretation unverified"
+          ],
+          "sourceProfileRow": 66
+        },
+        {
+          "name": "SG4–CellTop",
+          "segment": "Upper",
+          "length": 1.7,
+          "deltaForce": 93.36495809854574,
+          "shaftKpa": 142.86457122545616,
+          "review": false,
+          "boundaryDerived": true,
+          "source": "boundary",
+          "fromDepth": 21.2,
+          "toDepth": 22.9,
+          "fromId": "SG4",
+          "toId": "CELL_TOP",
+          "fromForceTf": 356.63504190145426,
+          "toForceTf": 450.0,
+          "gaugeReview": false,
+          "negativeTransfer": false,
+          "reviewReasons": [
+            "Source-workbook boundary convention; independent hydraulic calibration/physical load interpretation unverified"
+          ],
+          "sourceProfileRow": 66
+        },
+        {
+          "name": "CellBottom–SG5",
+          "segment": "Lower",
+          "length": 0.8,
+          "deltaForce": 31.37123245024179,
+          "shaftKpa": 102.0072760562445,
+          "review": true,
+          "boundaryDerived": true,
+          "source": "boundary",
+          "fromDepth": 23.3,
+          "toDepth": 24.1,
+          "fromId": "CELL_BOTTOM",
+          "toId": "SG5",
+          "fromForceTf": 450.0,
+          "toForceTf": 418.6287675497582,
+          "gaugeReview": true,
+          "negativeTransfer": false,
+          "reviewReasons": [
+            "Source-workbook boundary convention; independent hydraulic calibration/physical load interpretation unverified",
+            "Strain-gauge level has a review flag"
+          ],
+          "sourceProfileRow": 66
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "load": 540.0,
+      "phase": "Loading",
+      "sourceProfileRow": 67,
+      "rawEndpointRow": 84,
+      "headForceTf": 0.0,
+      "topFaceForceTf": 540.0,
+      "bottomFaceForceTf": 540.0,
+      "points": [
+        {
+          "id": "PILE_HEAD",
+          "nameHe": "ראש הכלונס · תנאי גבול",
+          "depth": 0,
+          "force": 0.0,
+          "sourceCell": "Напряжения!M67",
+          "depthSourceCell": "Исходные данные!B17",
+          "kind": "sourceBoundary"
+        },
+        {
+          "id": "CELL_TOP",
+          "nameHe": "פאה עליונה של התא · נקודת גבול",
+          "depth": 22.9,
+          "force": 540.0,
+          "sourceCell": "Напряжения!H67",
+          "depthSourceCell": "Исходные данные!B22",
+          "kind": "sourceBoundary"
+        },
+        {
+          "id": "CELL_BOTTOM",
+          "nameHe": "פאה תחתונה של התא · נקודת גבול",
+          "depth": 23.3,
+          "force": 540.0,
+          "sourceCell": "Напряжения!G67",
+          "depthSourceCell": "Исходные данные!B23",
+          "kind": "sourceBoundary"
+        }
+      ],
+      "intervals": [
+        {
+          "name": "Head–SG1",
+          "segment": "Upper",
+          "length": 9.7,
+          "deltaForce": 116.67170569449145,
+          "shaftKpa": 31.28840104975719,
+          "review": false,
+          "boundaryDerived": true,
+          "source": "boundary",
+          "fromDepth": 0,
+          "toDepth": 9.7,
+          "fromId": "PILE_HEAD",
+          "toId": "SG1",
+          "fromForceTf": 0.0,
+          "toForceTf": 116.67170569449145,
+          "gaugeReview": false,
+          "negativeTransfer": false,
+          "reviewReasons": [
+            "Source-workbook boundary convention; independent hydraulic calibration/physical load interpretation unverified"
+          ],
+          "sourceProfileRow": 67
+        },
+        {
+          "name": "SG4–CellTop",
+          "segment": "Upper",
+          "length": 1.7,
+          "deltaForce": 88.62031221307569,
+          "shaftKpa": 135.60444050993814,
+          "review": true,
+          "boundaryDerived": true,
+          "source": "boundary",
+          "fromDepth": 21.2,
+          "toDepth": 22.9,
+          "fromId": "SG4",
+          "toId": "CELL_TOP",
+          "fromForceTf": 451.3796877869243,
+          "toForceTf": 540.0,
+          "gaugeReview": true,
+          "negativeTransfer": false,
+          "reviewReasons": [
+            "Source-workbook boundary convention; independent hydraulic calibration/physical load interpretation unverified",
+            "Strain-gauge level has a review flag"
+          ],
+          "sourceProfileRow": 67
+        },
+        {
+          "name": "CellBottom–SG5",
+          "segment": "Lower",
+          "length": 0.8,
+          "deltaForce": 22.105668373219487,
+          "shaftKpa": 71.87919759707796,
+          "review": true,
+          "boundaryDerived": true,
+          "source": "boundary",
+          "fromDepth": 23.3,
+          "toDepth": 24.1,
+          "fromId": "CELL_BOTTOM",
+          "toId": "SG5",
+          "fromForceTf": 540.0,
+          "toForceTf": 517.8943316267805,
+          "gaugeReview": true,
+          "negativeTransfer": false,
+          "reviewReasons": [
+            "Source-workbook boundary convention; independent hydraulic calibration/physical load interpretation unverified",
+            "Strain-gauge level has a review flag"
+          ],
+          "sourceProfileRow": 67
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "load": 630.0,
+      "phase": "Loading",
+      "sourceProfileRow": 68,
+      "rawEndpointRow": 100,
+      "headForceTf": 0.0,
+      "topFaceForceTf": 630.0,
+      "bottomFaceForceTf": 630.0,
+      "points": [
+        {
+          "id": "PILE_HEAD",
+          "nameHe": "ראש הכלונס · תנאי גבול",
+          "depth": 0,
+          "force": 0.0,
+          "sourceCell": "Напряжения!M68",
+          "depthSourceCell": "Исходные данные!B17",
+          "kind": "sourceBoundary"
+        },
+        {
+          "id": "CELL_TOP",
+          "nameHe": "פאה עליונה של התא · נקודת גבול",
+          "depth": 22.9,
+          "force": 630.0,
+          "sourceCell": "Напряжения!H68",
+          "depthSourceCell": "Исходные данные!B22",
+          "kind": "sourceBoundary"
+        },
+        {
+          "id": "CELL_BOTTOM",
+          "nameHe": "פאה תחתונה של התא · נקודת גבול",
+          "depth": 23.3,
+          "force": 630.0,
+          "sourceCell": "Напряжения!G68",
+          "depthSourceCell": "Исходные данные!B23",
+          "kind": "sourceBoundary"
+        }
+      ],
+      "intervals": [
+        {
+          "name": "Head–SG1",
+          "segment": "Upper",
+          "length": 9.7,
+          "deltaForce": 167.42578729042057,
+          "shaftKpa": 44.899362254385466,
+          "review": false,
+          "boundaryDerived": true,
+          "source": "boundary",
+          "fromDepth": 0,
+          "toDepth": 9.7,
+          "fromId": "PILE_HEAD",
+          "toId": "SG1",
+          "fromForceTf": 0.0,
+          "toForceTf": 167.42578729042057,
+          "gaugeReview": false,
+          "negativeTransfer": false,
+          "reviewReasons": [
+            "Source-workbook boundary convention; independent hydraulic calibration/physical load interpretation unverified"
+          ],
+          "sourceProfileRow": 68
+        },
+        {
+          "name": "SG4–CellTop",
+          "segment": "Upper",
+          "length": 1.7,
+          "deltaForce": 52.74147447262942,
+          "shaftKpa": 80.70359897101382,
+          "review": true,
+          "boundaryDerived": true,
+          "source": "boundary",
+          "fromDepth": 21.2,
+          "toDepth": 22.9,
+          "fromId": "SG4",
+          "toId": "CELL_TOP",
+          "fromForceTf": 577.2585255273706,
+          "toForceTf": 630.0,
+          "gaugeReview": true,
+          "negativeTransfer": false,
+          "reviewReasons": [
+            "Source-workbook boundary convention; independent hydraulic calibration/physical load interpretation unverified",
+            "Strain-gauge level has a review flag"
+          ],
+          "sourceProfileRow": 68
+        },
+        {
+          "name": "CellBottom–SG5",
+          "segment": "Lower",
+          "length": 0.8,
+          "deltaForce": -38.82799124860469,
+          "shaftKpa": -126.25381002445563,
+          "review": true,
+          "boundaryDerived": true,
+          "source": "boundary",
+          "fromDepth": 23.3,
+          "toDepth": 24.1,
+          "fromId": "CELL_BOTTOM",
+          "toId": "SG5",
+          "fromForceTf": 630.0,
+          "toForceTf": 668.8279912486047,
+          "gaugeReview": true,
+          "negativeTransfer": true,
+          "reviewReasons": [
+            "Source-workbook boundary convention; independent hydraulic calibration/physical load interpretation unverified",
+            "Strain-gauge level has a review flag",
+            "Negative boundary-derived transfer retained"
+          ],
+          "sourceProfileRow": 68
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "load": 720.0,
+      "phase": "Loading",
+      "sourceProfileRow": 69,
+      "rawEndpointRow": 120,
+      "headForceTf": 0.0,
+      "topFaceForceTf": 720.0,
+      "bottomFaceForceTf": 720.0,
+      "points": [
+        {
+          "id": "PILE_HEAD",
+          "nameHe": "ראש הכלונס · תנאי גבול",
+          "depth": 0,
+          "force": 0.0,
+          "sourceCell": "Напряжения!M69",
+          "depthSourceCell": "Исходные данные!B17",
+          "kind": "sourceBoundary"
+        },
+        {
+          "id": "CELL_TOP",
+          "nameHe": "פאה עליונה של התא · נקודת גבול",
+          "depth": 22.9,
+          "force": 720.0,
+          "sourceCell": "Напряжения!H69",
+          "depthSourceCell": "Исходные данные!B22",
+          "kind": "sourceBoundary"
+        },
+        {
+          "id": "CELL_BOTTOM",
+          "nameHe": "פאה תחתונה של התא · נקודת גבול",
+          "depth": 23.3,
+          "force": 720.0,
+          "sourceCell": "Напряжения!G69",
+          "depthSourceCell": "Исходные данные!B23",
+          "kind": "sourceBoundary"
+        }
+      ],
+      "intervals": [
+        {
+          "name": "Head–SG1",
+          "segment": "Upper",
+          "length": 9.7,
+          "deltaForce": 201.4510972955626,
+          "shaftKpa": 54.024089958897484,
+          "review": false,
+          "boundaryDerived": true,
+          "source": "boundary",
+          "fromDepth": 0,
+          "toDepth": 9.7,
+          "fromId": "PILE_HEAD",
+          "toId": "SG1",
+          "fromForceTf": 0.0,
+          "toForceTf": 201.4510972955626,
+          "gaugeReview": false,
+          "negativeTransfer": false,
+          "reviewReasons": [
+            "Source-workbook boundary convention; independent hydraulic calibration/physical load interpretation unverified"
+          ],
+          "sourceProfileRow": 69
+        },
+        {
+          "name": "SG4–CellTop",
+          "segment": "Upper",
+          "length": 1.7,
+          "deltaForce": 55.1761763838914,
+          "shaftKpa": 84.42911496436012,
+          "review": true,
+          "boundaryDerived": true,
+          "source": "boundary",
+          "fromDepth": 21.2,
+          "toDepth": 22.9,
+          "fromId": "SG4",
+          "toId": "CELL_TOP",
+          "fromForceTf": 664.8238236161086,
+          "toForceTf": 720.0,
+          "gaugeReview": true,
+          "negativeTransfer": false,
+          "reviewReasons": [
+            "Source-workbook boundary convention; independent hydraulic calibration/physical load interpretation unverified",
+            "Strain-gauge level has a review flag"
+          ],
+          "sourceProfileRow": 69
+        },
+        {
+          "name": "CellBottom–SG5",
+          "segment": "Lower",
+          "length": 0.8,
+          "deltaForce": -53.8245629585565,
+          "shaftKpa": -175.01693824202525,
+          "review": true,
+          "boundaryDerived": true,
+          "source": "boundary",
+          "fromDepth": 23.3,
+          "toDepth": 24.1,
+          "fromId": "CELL_BOTTOM",
+          "toId": "SG5",
+          "fromForceTf": 720.0,
+          "toForceTf": 773.8245629585565,
+          "gaugeReview": true,
+          "negativeTransfer": true,
+          "reviewReasons": [
+            "Source-workbook boundary convention; independent hydraulic calibration/physical load interpretation unverified",
+            "Strain-gauge level has a review flag",
+            "Negative boundary-derived transfer retained"
+          ],
+          "sourceProfileRow": 69
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "load": 810.0,
+      "phase": "Loading",
+      "sourceProfileRow": 70,
+      "rawEndpointRow": 137,
+      "headForceTf": 0.0,
+      "topFaceForceTf": 810.0,
+      "bottomFaceForceTf": 810.0,
+      "points": [
+        {
+          "id": "PILE_HEAD",
+          "nameHe": "ראש הכלונס · תנאי גבול",
+          "depth": 0,
+          "force": 0.0,
+          "sourceCell": "Напряжения!M70",
+          "depthSourceCell": "Исходные данные!B17",
+          "kind": "sourceBoundary"
+        },
+        {
+          "id": "CELL_TOP",
+          "nameHe": "פאה עליונה של התא · נקודת גבול",
+          "depth": 22.9,
+          "force": 810.0,
+          "sourceCell": "Напряжения!H70",
+          "depthSourceCell": "Исходные данные!B22",
+          "kind": "sourceBoundary"
+        },
+        {
+          "id": "CELL_BOTTOM",
+          "nameHe": "פאה תחתונה של התא · נקודת גבול",
+          "depth": 23.3,
+          "force": 810.0,
+          "sourceCell": "Напряжения!G70",
+          "depthSourceCell": "Исходные данные!B23",
+          "kind": "sourceBoundary"
+        }
+      ],
+      "intervals": [
+        {
+          "name": "Head–SG1",
+          "segment": "Upper",
+          "length": 9.7,
+          "deltaForce": 232.0095507178047,
+          "shaftKpa": 62.219094398440696,
+          "review": false,
+          "boundaryDerived": true,
+          "source": "boundary",
+          "fromDepth": 0,
+          "toDepth": 9.7,
+          "fromId": "PILE_HEAD",
+          "toId": "SG1",
+          "fromForceTf": 0.0,
+          "toForceTf": 232.0095507178047,
+          "gaugeReview": false,
+          "negativeTransfer": false,
+          "reviewReasons": [
+            "Source-workbook boundary convention; independent hydraulic calibration/physical load interpretation unverified"
+          ],
+          "sourceProfileRow": 70
+        },
+        {
+          "name": "SG4–CellTop",
+          "segment": "Upper",
+          "length": 1.7,
+          "deltaForce": 63.86893835756814,
+          "shaftKpa": 97.73054772271341,
+          "review": true,
+          "boundaryDerived": true,
+          "source": "boundary",
+          "fromDepth": 21.2,
+          "toDepth": 22.9,
+          "fromId": "SG4",
+          "toId": "CELL_TOP",
+          "fromForceTf": 746.1310616424319,
+          "toForceTf": 810.0,
+          "gaugeReview": true,
+          "negativeTransfer": false,
+          "reviewReasons": [
+            "Source-workbook boundary convention; independent hydraulic calibration/physical load interpretation unverified",
+            "Strain-gauge level has a review flag"
+          ],
+          "sourceProfileRow": 70
+        },
+        {
+          "name": "CellBottom–SG5",
+          "segment": "Lower",
+          "length": 0.8,
+          "deltaForce": -62.31079784877886,
+          "shaftKpa": -202.6109355928808,
+          "review": true,
+          "boundaryDerived": true,
+          "source": "boundary",
+          "fromDepth": 23.3,
+          "toDepth": 24.1,
+          "fromId": "CELL_BOTTOM",
+          "toId": "SG5",
+          "fromForceTf": 810.0,
+          "toForceTf": 872.3107978487789,
+          "gaugeReview": true,
+          "negativeTransfer": true,
+          "reviewReasons": [
+            "Source-workbook boundary convention; independent hydraulic calibration/physical load interpretation unverified",
+            "Strain-gauge level has a review flag",
+            "Negative boundary-derived transfer retained"
+          ],
+          "sourceProfileRow": 70
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "load": 900.0,
+      "phase": "Loading",
+      "sourceProfileRow": 71,
+      "rawEndpointRow": 146,
+      "headForceTf": 0.0,
+      "topFaceForceTf": 900.0,
+      "bottomFaceForceTf": 900.0,
+      "points": [
+        {
+          "id": "PILE_HEAD",
+          "nameHe": "ראש הכלונס · תנאי גבול",
+          "depth": 0,
+          "force": 0.0,
+          "sourceCell": "Напряжения!M71",
+          "depthSourceCell": "Исходные данные!B17",
+          "kind": "sourceBoundary"
+        },
+        {
+          "id": "CELL_TOP",
+          "nameHe": "פאה עליונה של התא · נקודת גבול",
+          "depth": 22.9,
+          "force": 900.0,
+          "sourceCell": "Напряжения!H71",
+          "depthSourceCell": "Исходные данные!B22",
+          "kind": "sourceBoundary"
+        },
+        {
+          "id": "CELL_BOTTOM",
+          "nameHe": "פאה תחתונה של התא · נקודת גבול",
+          "depth": 23.3,
+          "force": 900.0,
+          "sourceCell": "Напряжения!G71",
+          "depthSourceCell": "Исходные данные!B23",
+          "kind": "sourceBoundary"
+        }
+      ],
+      "intervals": [
+        {
+          "name": "Head–SG1",
+          "segment": "Upper",
+          "length": 9.7,
+          "deltaForce": 245.68405946849077,
+          "shaftKpa": 65.88625184165343,
+          "review": false,
+          "boundaryDerived": true,
+          "source": "boundary",
+          "fromDepth": 0,
+          "toDepth": 9.7,
+          "fromId": "PILE_HEAD",
+          "toId": "SG1",
+          "fromForceTf": 0.0,
+          "toForceTf": 245.68405946849077,
+          "gaugeReview": false,
+          "negativeTransfer": false,
+          "reviewReasons": [
+            "Source-workbook boundary convention; independent hydraulic calibration/physical load interpretation unverified"
+          ],
+          "sourceProfileRow": 71
+        },
+        {
+          "name": "SG4–CellTop",
+          "segment": "Upper",
+          "length": 1.7,
+          "deltaForce": 119.0607189227917,
+          "shaftKpa": 182.18353978958334,
+          "review": true,
+          "boundaryDerived": true,
+          "source": "boundary",
+          "fromDepth": 21.2,
+          "toDepth": 22.9,
+          "fromId": "SG4",
+          "toId": "CELL_TOP",
+          "fromForceTf": 780.9392810772083,
+          "toForceTf": 900.0,
+          "gaugeReview": true,
+          "negativeTransfer": false,
+          "reviewReasons": [
+            "Source-workbook boundary convention; independent hydraulic calibration/physical load interpretation unverified",
+            "Strain-gauge level has a review flag"
+          ],
+          "sourceProfileRow": 71
+        },
+        {
+          "name": "CellBottom–SG5",
+          "segment": "Lower",
+          "length": 0.8,
+          "deltaForce": -10.908428702956598,
+          "shaftKpa": -35.47004727363775,
+          "review": true,
+          "boundaryDerived": true,
+          "source": "boundary",
+          "fromDepth": 23.3,
+          "toDepth": 24.1,
+          "fromId": "CELL_BOTTOM",
+          "toId": "SG5",
+          "fromForceTf": 900.0,
+          "toForceTf": 910.9084287029566,
+          "gaugeReview": true,
+          "negativeTransfer": true,
+          "reviewReasons": [
+            "Source-workbook boundary convention; independent hydraulic calibration/physical load interpretation unverified",
+            "Strain-gauge level has a review flag",
+            "Negative boundary-derived transfer retained"
+          ],
+          "sourceProfileRow": 71
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "load": 450.0,
+      "phase": "Unloading",
+      "sourceProfileRow": 72,
+      "rawEndpointRow": 149,
+      "headForceTf": 0.0,
+      "topFaceForceTf": 450.0,
+      "bottomFaceForceTf": 450.0,
+      "points": [
+        {
+          "id": "PILE_HEAD",
+          "nameHe": "ראש הכלונס · תנאי גבול",
+          "depth": 0,
+          "force": 0.0,
+          "sourceCell": "Напряжения!M72",
+          "depthSourceCell": "Исходные данные!B17",
+          "kind": "sourceBoundary"
+        },
+        {
+          "id": "CELL_TOP",
+          "nameHe": "פאה עליונה של התא · נקודת גבול",
+          "depth": 22.9,
+          "force": 450.0,
+          "sourceCell": "Напряжения!H72",
+          "depthSourceCell": "Исходные данные!B22",
+          "kind": "sourceBoundary"
+        },
+        {
+          "id": "CELL_BOTTOM",
+          "nameHe": "פאה תחתונה של התא · נקודת גבול",
+          "depth": 23.3,
+          "force": 450.0,
+          "sourceCell": "Напряжения!G72",
+          "depthSourceCell": "Исходные данные!B23",
+          "kind": "sourceBoundary"
+        }
+      ],
+      "intervals": [
+        {
+          "name": "Head–SG1",
+          "segment": "Upper",
+          "length": 9.7,
+          "deltaForce": 199.92023191726815,
+          "shaftKpa": 53.6135505772698,
+          "review": true,
+          "boundaryDerived": true,
+          "source": "boundary",
+          "fromDepth": 0,
+          "toDepth": 9.7,
+          "fromId": "PILE_HEAD",
+          "toId": "SG1",
+          "fromForceTf": 0.0,
+          "toForceTf": 199.92023191726815,
+          "gaugeReview": true,
+          "negativeTransfer": false,
+          "reviewReasons": [
+            "Source-workbook boundary convention; independent hydraulic calibration/physical load interpretation unverified",
+            "Strain-gauge level has a review flag"
+          ],
+          "sourceProfileRow": 72
+        },
+        {
+          "name": "SG4–CellTop",
+          "segment": "Upper",
+          "length": 1.7,
+          "deltaForce": -101.93983287701792,
+          "shaftKpa": -155.9856161387456,
+          "review": true,
+          "boundaryDerived": true,
+          "source": "boundary",
+          "fromDepth": 21.2,
+          "toDepth": 22.9,
+          "fromId": "SG4",
+          "toId": "CELL_TOP",
+          "fromForceTf": 551.9398328770179,
+          "toForceTf": 450.0,
+          "gaugeReview": true,
+          "negativeTransfer": true,
+          "reviewReasons": [
+            "Source-workbook boundary convention; independent hydraulic calibration/physical load interpretation unverified",
+            "Strain-gauge level has a review flag",
+            "Negative boundary-derived transfer retained"
+          ],
+          "sourceProfileRow": 72
+        },
+        {
+          "name": "CellBottom–SG5",
+          "segment": "Lower",
+          "length": 0.8,
+          "deltaForce": -176.18559731929452,
+          "shaftKpa": -572.8883266345849,
+          "review": true,
+          "boundaryDerived": true,
+          "source": "boundary",
+          "fromDepth": 23.3,
+          "toDepth": 24.1,
+          "fromId": "CELL_BOTTOM",
+          "toId": "SG5",
+          "fromForceTf": 450.0,
+          "toForceTf": 626.1855973192945,
+          "gaugeReview": true,
+          "negativeTransfer": true,
+          "reviewReasons": [
+            "Source-workbook boundary convention; independent hydraulic calibration/physical load interpretation unverified",
+            "Strain-gauge level has a review flag",
+            "Negative boundary-derived transfer retained"
+          ],
+          "sourceProfileRow": 72
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "load": 225.0,
+      "phase": "Unloading",
+      "sourceProfileRow": 73,
+      "rawEndpointRow": 152,
+      "headForceTf": 0.0,
+      "topFaceForceTf": 225.0,
+      "bottomFaceForceTf": 225.0,
+      "points": [
+        {
+          "id": "PILE_HEAD",
+          "nameHe": "ראש הכלונס · תנאי גבול",
+          "depth": 0,
+          "force": 0.0,
+          "sourceCell": "Напряжения!M73",
+          "depthSourceCell": "Исходные данные!B17",
+          "kind": "sourceBoundary"
+        },
+        {
+          "id": "CELL_TOP",
+          "nameHe": "פאה עליונה של התא · נקודת גבול",
+          "depth": 22.9,
+          "force": 225.0,
+          "sourceCell": "Напряжения!H73",
+          "depthSourceCell": "Исходные данные!B22",
+          "kind": "sourceBoundary"
+        },
+        {
+          "id": "CELL_BOTTOM",
+          "nameHe": "פאה תחתונה של התא · נקודת גבול",
+          "depth": 23.3,
+          "force": 225.0,
+          "sourceCell": "Напряжения!G73",
+          "depthSourceCell": "Исходные данные!B23",
+          "kind": "sourceBoundary"
+        }
+      ],
+      "intervals": [
+        {
+          "name": "Head–SG1",
+          "segment": "Upper",
+          "length": 9.7,
+          "deltaForce": 156.9894935452796,
+          "shaftKpa": 42.10061218702907,
+          "review": true,
+          "boundaryDerived": true,
+          "source": "boundary",
+          "fromDepth": 0,
+          "toDepth": 9.7,
+          "fromId": "PILE_HEAD",
+          "toId": "SG1",
+          "fromForceTf": 0.0,
+          "toForceTf": 156.9894935452796,
+          "gaugeReview": true,
+          "negativeTransfer": false,
+          "reviewReasons": [
+            "Source-workbook boundary convention; independent hydraulic calibration/physical load interpretation unverified",
+            "Strain-gauge level has a review flag"
+          ],
+          "sourceProfileRow": 73
+        },
+        {
+          "name": "SG4–CellTop",
+          "segment": "Upper",
+          "length": 1.7,
+          "deltaForce": -148.67519490287077,
+          "shaftKpa": -227.4988218731991,
+          "review": true,
+          "boundaryDerived": true,
+          "source": "boundary",
+          "fromDepth": 21.2,
+          "toDepth": 22.9,
+          "fromId": "SG4",
+          "toId": "CELL_TOP",
+          "fromForceTf": 373.67519490287077,
+          "toForceTf": 225.0,
+          "gaugeReview": false,
+          "negativeTransfer": true,
+          "reviewReasons": [
+            "Source-workbook boundary convention; independent hydraulic calibration/physical load interpretation unverified",
+            "Negative boundary-derived transfer retained"
+          ],
+          "sourceProfileRow": 73
+        },
+        {
+          "name": "CellBottom–SG5",
+          "segment": "Lower",
+          "length": 0.8,
+          "deltaForce": -195.61391763628842,
+          "shaftKpa": -636.0618100808646,
+          "review": true,
+          "boundaryDerived": true,
+          "source": "boundary",
+          "fromDepth": 23.3,
+          "toDepth": 24.1,
+          "fromId": "CELL_BOTTOM",
+          "toId": "SG5",
+          "fromForceTf": 225.0,
+          "toForceTf": 420.6139176362884,
+          "gaugeReview": true,
+          "negativeTransfer": true,
+          "reviewReasons": [
+            "Source-workbook boundary convention; independent hydraulic calibration/physical load interpretation unverified",
+            "Strain-gauge level has a review flag",
+            "Negative boundary-derived transfer retained"
+          ],
+          "sourceProfileRow": 73
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "load": 0.0,
+      "phase": "Unloading",
+      "sourceProfileRow": 74,
+      "rawEndpointRow": 155,
+      "headForceTf": 0.0,
+      "topFaceForceTf": 0.0,
+      "bottomFaceForceTf": 0.0,
+      "points": [
+        {
+          "id": "PILE_HEAD",
+          "nameHe": "ראש הכלונס · תנאי גבול",
+          "depth": 0,
+          "force": 0.0,
+          "sourceCell": "Напряжения!M74",
+          "depthSourceCell": "Исходные данные!B17",
+          "kind": "sourceBoundary"
+        },
+        {
+          "id": "CELL_TOP",
+          "nameHe": "פאה עליונה של התא · נקודת גבול",
+          "depth": 22.9,
+          "force": 0.0,
+          "sourceCell": "Напряжения!H74",
+          "depthSourceCell": "Исходные данные!B22",
+          "kind": "sourceBoundary"
+        },
+        {
+          "id": "CELL_BOTTOM",
+          "nameHe": "פאה תחתונה של התא · נקודת גבול",
+          "depth": 23.3,
+          "force": 0.0,
+          "sourceCell": "Напряжения!G74",
+          "depthSourceCell": "Исходные данные!B23",
+          "kind": "sourceBoundary"
+        }
+      ],
+      "intervals": [
+        {
+          "name": "Head–SG1",
+          "segment": "Upper",
+          "length": 9.7,
+          "deltaForce": 94.8147393915312,
+          "shaftKpa": 25.42691541065303,
+          "review": true,
+          "boundaryDerived": true,
+          "source": "boundary",
+          "fromDepth": 0,
+          "toDepth": 9.7,
+          "fromId": "PILE_HEAD",
+          "toId": "SG1",
+          "fromForceTf": 0.0,
+          "toForceTf": 94.8147393915312,
+          "gaugeReview": true,
+          "negativeTransfer": false,
+          "reviewReasons": [
+            "Source-workbook boundary convention; independent hydraulic calibration/physical load interpretation unverified",
+            "Strain-gauge level has a review flag"
+          ],
+          "sourceProfileRow": 74
+        },
+        {
+          "name": "SG4–CellTop",
+          "segment": "Upper",
+          "length": 1.7,
+          "deltaForce": -163.5146718224861,
+          "shaftKpa": -250.2057940660557,
+          "review": true,
+          "boundaryDerived": true,
+          "source": "boundary",
+          "fromDepth": 21.2,
+          "toDepth": 22.9,
+          "fromId": "SG4",
+          "toId": "CELL_TOP",
+          "fromForceTf": 163.5146718224861,
+          "toForceTf": 0.0,
+          "gaugeReview": false,
+          "negativeTransfer": true,
+          "reviewReasons": [
+            "Source-workbook boundary convention; independent hydraulic calibration/physical load interpretation unverified",
+            "Negative boundary-derived transfer retained"
+          ],
+          "sourceProfileRow": 74
+        },
+        {
+          "name": "CellBottom–SG5",
+          "segment": "Lower",
+          "length": 0.8,
+          "deltaForce": -159.3025119830634,
+          "shaftKpa": -517.9909760346154,
+          "review": true,
+          "boundaryDerived": true,
+          "source": "boundary",
+          "fromDepth": 23.3,
+          "toDepth": 24.1,
+          "fromId": "CELL_BOTTOM",
+          "toId": "SG5",
+          "fromForceTf": 0.0,
+          "toForceTf": 159.3025119830634,
+          "gaugeReview": true,
+          "negativeTransfer": true,
+          "reviewReasons": [
+            "Source-workbook boundary convention; independent hydraulic calibration/physical load interpretation unverified",
+            "Strain-gauge level has a review flag",
+            "Negative boundary-derived transfer retained"
+          ],
+          "sourceProfileRow": 74
+        }
+      ]
+    }
+  ],
+  "validation": {
+    "matched": true,
+    "comparisons": 2547,
+    "mismatches": [],
+    "maximumAbsoluteFloatDifference": 7.958078640513122e-13,
+    "stageBoundaryPointCount": 57,
+    "boundaryIntervalCount": 57,
+    "csvDataRows": 57,
+    "csvDataCells": 1083,
+    "sourceComparisons": "Each profile A/G/H/M row57:74 matched to actual Raw Data final load-group rows; source geometry and contradictory earlier /2 table explicitly checked.",
+    "intervalCalculationValidation": "Gauge forces/flags recomputed independently from Raw Data Hz and baseline19; all new interval lengths, signed transfers, stresses, flags and every CSV data cell compared.",
+    "numericImputationCount": 0,
+    "newPointsAreMeasurements": false
+  }
+}

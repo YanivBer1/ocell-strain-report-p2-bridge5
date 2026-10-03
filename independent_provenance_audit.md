@@ -113,3 +113,8 @@ Compression strain is a change relative to Raw Data row 19. Consequently estimat
 No initial/residual concrete stress or initial axial-force profile, pile self-weight/submerged effective unit weight distribution, or groundwater/buoyancy corrections were supplied or applied. These are missing engineering inputs; they have not been invented or silently assigned zero. Zero strain change at the reference reading does not prove zero actual initial stress, force, or shaft resistance.
 
 The independent numerical verification count remains **24,202 comparisons with zero mismatches**. This interpretation note adds no measurement data and changes no calculation results.
+
+
+## Subsequent source-boundary display update
+
+The original 24,202 checks above cover preserved gauge/channel data. Source-workbook head and cell-face boundaries were subsequently added as explicitly distinct squares/dashed guides; they are not new strain-gauge measurements. The force-profile table G/H/M assigns the recorded stage load to each cellface and zero at the head. A separate earlier /2 table remains contradictory and disclosed. Three additional boundary-derived interval estimates per stage are in boundary_interval_results.csv; their source audit cell_boundary_source_audit.md reports 2,547 additional comparisons with zero mismatches. Original numeric datasets remain unchanged.
