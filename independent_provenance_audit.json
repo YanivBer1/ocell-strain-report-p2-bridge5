@@ -1,0 +1,221 @@
+{
+  "sourcePath": "WORK_FILE with EQU_line.xlsx",
+  "sourceSha256": "1ac477cd47eee7a928161c7db7886bbb7c10c72005306367de5ce16d9b76842e",
+  "scope": "Numerical reproduction and source provenance; not engineering validation",
+  "checkSummary": {
+    "matched": true,
+    "comparisons": 24202,
+    "maximumAbsoluteFloatDifference": 3.846437057752894e-13,
+    "rawRecords": 154,
+    "rawFrequencyValues": 3234,
+    "rawStrainValues": 3234,
+    "stageLevelRows": 133,
+    "transferRows": 95,
+    "sourceRows": "Raw Data!2:155",
+    "frequencyColumns": "Raw Data!F:Z",
+    "mismatches": [],
+    "originalStrainTransferComparisons": 20076,
+    "displacementComparisons": 4126
+  },
+  "sourceInputs": {
+    "diameterM": {
+      "value": 1.2,
+      "cell": "Исходные данные!C4"
+    },
+    "modulusGpa": {
+      "value": 34,
+      "cell": "Исходные данные!C12"
+    },
+    "depthsM": [
+      {
+        "name": "SG1",
+        "depth": 9.7,
+        "firstCol": 6,
+        "cell": "Исходные данные!B18"
+      },
+      {
+        "name": "SG2",
+        "depth": 14.2,
+        "firstCol": 9,
+        "cell": "Исходные данные!B19"
+      },
+      {
+        "name": "SG3",
+        "depth": 18,
+        "firstCol": 12,
+        "cell": "Исходные данные!B20"
+      },
+      {
+        "name": "SG4",
+        "depth": 21.2,
+        "firstCol": 15,
+        "cell": "Исходные данные!B21"
+      },
+      {
+        "name": "SG5",
+        "depth": 24.099999999999998,
+        "firstCol": 18,
+        "cell": "Исходные данные!B24"
+      },
+      {
+        "name": "SG6",
+        "depth": 26.199999999999996,
+        "firstCol": 21,
+        "cell": "Исходные данные!B25"
+      },
+      {
+        "name": "SG7",
+        "depth": 28.699999999999996,
+        "firstCol": 24,
+        "cell": "Исходные данные!B26"
+      }
+    ],
+    "ocellTopM": {
+      "value": 22.9,
+      "cell": "Исходные данные!B22"
+    },
+    "ocellBottomM": {
+      "value": 23.299999999999997,
+      "cell": "Исходные данные!B23"
+    },
+    "ocellThicknessM": {
+      "value": 0.4,
+      "cell": "Исходные данные!D22"
+    },
+    "pileBaseM": {
+      "value": 29.199999999999996,
+      "cell": "Исходные данные!B27"
+    },
+    "gaugeFactor": {
+      "value": 3.304,
+      "formulaCell": "Стрейны!D2",
+      "formula": "=SG!C2^2*3.304/1000",
+      "deltaFormulaCell": "Стрейны!D3",
+      "deltaFormula": "=SG!C3^2*3.304/1000-$D$2",
+      "formulaCount": 399,
+      "status": "Workbook calculation factor; no sensor calibration certificate supplied"
+    }
+  },
+  "missingValuesFilled": [],
+  "sourceNumbersAltered": false,
+  "referencePdfUsedForNumericData": false,
+  "methodsChosen": [
+    {
+      "choice": "Zero reference",
+      "detail": "Final initial zero-load Raw Data row19 chosen for all21 channels; processed workbook uses a different baseline."
+    },
+    {
+      "choice": "Compression-positive sign",
+      "detail": "3.304*(f_zero^2-f_current^2)/1000; reverse sign of the workbook processed delta formula."
+    },
+    {
+      "choice": "One common gauge factor",
+      "detail": "Workbook3.304 convention applied to all21 channels SG1-SG7; individual calibration remains unverified."
+    },
+    {
+      "choice": "Sensor averaging",
+      "detail": "Equal arithmetic mean of all3 gauges per level, no sensor exclusion or imputation; stage time mean is unweighted arithmetic mean of the recorded means."
+    },
+    {
+      "choice": "Force/stress model",
+      "detail": "UniformE=34GPa times strain; gross circular area pi*1.2^2/4; ignore reinforcement contribution, steel area, composite stiffness, and modulus variation. Derived stress and axial force are increments relative to the chosen baseline, not absolute stress or force; initial stress, self-weight, and buoyancy corrections were not supplied/applied."
+    },
+    {
+      "choice": "Unit conversion",
+      "detail": "1tf=9806.65N; exact conventional SI conversion rather than workbook rounded10.1972tf/cm2 perGPa."
+    },
+    {
+      "choice": "Load/stage classification",
+      "detail": "Contiguous equal recorded load groups, checked against source markers; baseline0, stages1-15 loading,16-18 unloading. Recorded load retained unchanged; no halving/doubling."
+    },
+    {
+      "choice": "Transfer direction",
+      "detail": "Upper deeper force minus shallower; lower shallower minus deeper; divide bypi*diameter*intervalLength for mean shaft stress. Negative results preserved. These interval estimates are baseline-relative shaft-stress increments; they do not include an independently known initial resistance distribution."
+    },
+    {
+      "choice": "Review thresholds",
+      "detail": "Spread computed ifabs(mean)>=20microstrain; flagspread>25%. Interval flagged ifeitherendpointflagged ortransfernegative. These are report review heuristics, not acceptance criteria."
+    },
+    {
+      "choice": "Display/model limits",
+      "detail": "No gauge extrapolation to pilehead/cellboundaries; no measured head point inserted; no force line across O-cell; no synthesized local displacement/capacity."
+    }
+  ],
+  "missingEngineeringInputs": [
+    "Per-sensor calibration certificates and factors",
+    "Verified sensor orientation/compression sign and temperature compensation",
+    "Measured concrete modulus test report and its applicable range",
+    "Reinforcement area/stiffness and composite axial rigidity",
+    "Installation/as-built gauge elevations independently certified",
+    "O-cell pressure/load calibration and whether recorded load is combined or per-element",
+    "Displacement calibration/polarity certificates",
+    "Verified local relative displacement for shaft-mobilization curves",
+    "Verified toe load/resistance and equivalent top-down model inputs",
+    "Initial/residual concrete stress and axial-force profile at the baseline",
+    "Pile self-weight / submerged effective unit weight and initial force distribution",
+    "Groundwater/buoyancy corrections"
+  ],
+  "sourceIssues": [
+    "ProcessedSG timestampcolumn contains2019-07-15 strings while RawData chronology is2020-03-01/02. Numericalreconstruction uses RawData timestamps exclusively.",
+    "SetupA6 says pilelengthcm butC6 value29.2; geometrytableB27/D28 defines29.2m. Report uses geometrydepthtable.",
+    "RawDataA1 onlyLoad; НапряженияB2 describes loadincell andC2 loadinelements withC4=B4/2. Engineeringmeaning unresolved; report uses recorded load unchanged.",
+    "SG8 AA:AC excluded: noSG8depth provided insetup, and its processedfactor4.062 differs.",
+    "DisplacementSheet1 copies firstrowofnextstage and contains undocumentedcorrections; see displacement_source_audit.md."
+  ],
+  "displacementCheckSummary": {
+    "matched": true,
+    "comparisons": 4126,
+    "maximumAbsoluteFloatDifference": 7.105427357601002e-15,
+    "channelCount": 5,
+    "baselineRow": 19,
+    "sourceColumns": "Raw Data!AN:AR",
+    "stageEndpointRows": 19,
+    "stageEndpointChangeValues": 95,
+    "timelineRows": 137,
+    "timelineChangeValues": 685,
+    "stageCsvDataRows": 19,
+    "stageCsvCells": 323,
+    "loggerCsvDataRows": 137,
+    "loggerCsvCells": 2192,
+    "everyCsvDataCellMatched": true,
+    "numericImputationCount": 0,
+    "mismatches": [],
+    "comparisonBreakdowns": {
+      "baselineAndChannelMappingComparisons": 23,
+      "stageEndpointJsonComparisons": 191,
+      "timelineJsonComparisons": 1234,
+      "displacement_stage_results.csvComparisons": 344,
+      "displacement_logger_results.csvComparisons": 2331,
+      "sourceAnomalyComparisons": 3
+    },
+    "sourceRows": "Baseline and stage final source rows; timeline Raw Data!19:155",
+    "physicalCalibrationOrPolarityVerified": false,
+    "stageInputMethod": "Last row of each actual contiguous load group, never edited Sheet1 pairing",
+    "channelChangeMethod": "Source reported mm(row) minus source reported mm(19), signed and without correction",
+    "outputHashes": {
+      "displacement_data.json": "c419021cc71af77dd3463419bd1babd311dbbb6c33a110445e4308cdadbc97f4",
+      "displacement_stage_results.csv": "45fefa57cabc520cdbc682c16ab0a534a405780acdffb9c5666a633b1ccff380",
+      "displacement_logger_results.csv": "d82ade81914835fef18cbf3283a6ca11bff8a89d5f21ed45a2ac9533d45d5b04"
+    }
+  },
+  "referencePdf": {
+    "path": "/Users/yanivberniker/Developer/ocell_reference_analysis/reference-report.pdf",
+    "pages": 52,
+    "sha256": "a89c52d4ec958908222eb66e40963bc28e1818a117d51f3f64cb7c58e76e8edf",
+    "available": true,
+    "reviewScope": "Graph structure, axis orientation, loading/unloading continuity, and presentation only. No numeric measurement data copied.",
+    "numericDataUsed": false
+  },
+  "derivedQuantityInterpretation": {
+    "strain": "Compression strain change relative to the final zero-load baseline at Raw Data row19.",
+    "stress": "Baseline-relative estimated concrete stress increment E times delta-strain, not absolute concrete stress.",
+    "force": "Baseline-relative estimated axial-force increment E times gross area times delta-strain, not absolute in-situ axial force.",
+    "shaftFriction": "Baseline-relative estimated mean shaft-stress increment from differences of adjacent incremental force estimates, not an absolute soil-resistance profile.",
+    "missingCorrections": [
+      "Initial or residual axial-stress/force profile at the zero-load reference",
+      "Pile self-weight / submerged effective unit weight and initial force distribution",
+      "Buoyancy and groundwater corrections"
+    ],
+    "correctionsApplied": false
+  }
+}

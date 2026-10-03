@@ -1,0 +1,162 @@
+{
+  "review_date": "2026-10-03",
+  "source_pdf": "/Users/yanivberniker/Developer/ocell_reference_analysis/reference-report.pdf",
+  "source_text": "/Users/yanivberniker/Developer/ocell_reference_analysis/reference-text.txt",
+  "pdf_page_count": 52,
+  "text_pages_reviewed": "1-52",
+  "visually_inspected_pages": [26, 27, 28, 29, 30, 31, 32, 36, 37, 38, 39, 40, 41, 46, 47, 48, 49, 50, 51],
+  "scope": "Reference chart structures only. No reference readings, soil properties, calibration coefficients or load conventions adopted for P2.",
+  "reference_identity": {
+    "report": "Kraitec B R004/2026",
+    "test_dates": "2026-05-20/2026-05-21",
+    "diameter_m": 0.7,
+    "effective_length_m": 16.5,
+    "nominal_load_per_element_tf": 400,
+    "combined_load_tf": 800,
+    "load_definition_evidence_pages": [5, 20, 25, 32]
+  },
+  "p2_applicability": {
+    "different_test": true,
+    "load_semantics": "P2 Raw Data column A is titled Load; per-element/combined/equivalent meaning unresolved. No halving/doubling allowed based on reference.",
+    "force_semantics": "Existing P2 strain-derived force and stress are baseline-relative estimates under preserved model assumptions, not independent absolute-force measurements."
+  },
+  "experimental_charts": [
+    {
+      "id": "displacement_load",
+      "figure": 10,
+      "pages": [25, 26],
+      "reference_title": "Displacements by Load Steps",
+      "x": {"quantity": "nominal per-element load", "unit": "tf", "direction": "right", "display_domain": [0, 440]},
+      "y": {"quantity": "signed reference-corrected displacement", "unit": "mm", "direction": "up", "display_domain": [-3, 16]},
+      "series": ["top plate", "top pile", "bottom plate"],
+      "color_by": "displacement channel",
+      "loading_unloading": "Combined chronologically through peak for each channel; final zero-load residual retained.",
+      "p2_status": "partial_reported_channels_only",
+      "p2_allowed": "AN:AR minus row19, original signs, unverified channel labels and calibration limitations.",
+      "p2_not_allowed": "Verified physical head/plate/toe displacement or opening without calibration, installation mapping and reference corrections."
+    },
+    {
+      "id": "upper_strain_load",
+      "figure": 11,
+      "pages": [28, 35],
+      "reference_title": "Strain Levels of the Upper Element",
+      "x": {"quantity": "nominal per-element load", "unit": "tf", "direction": "right", "axis_note": "Lower axis/legend cropped in rendered figure; quantity supported by page35 table."},
+      "y": {"quantity": "strain", "unit": "microstrain", "direction": "up", "visible_domain": [0, 260]},
+      "color_by": "gauge level",
+      "loading_unloading": "Combined per level; unloading ends at residual strain.",
+      "p2_status": "supported",
+      "p2_levels": ["SG1", "SG2", "SG3", "SG4"],
+      "p2_allowed": "Same all-level load-response canvas as lower gauges, with upper/lower/all filters and actual stage-end means."
+    },
+    {
+      "id": "lower_strain_load",
+      "figure": 12,
+      "pages": [28, 35],
+      "reference_title": "Stain Levels of the Lower Element",
+      "x": {"quantity": "nominal per-element load", "unit": "tf", "direction": "right", "display_domain": [0, 500]},
+      "y": {"quantity": "strain", "unit": "microstrain", "direction": "up", "display_domain": [0, 240]},
+      "reference_levels": ["SG6"],
+      "loading_unloading": "Combined in one gauge series.",
+      "p2_status": "supported",
+      "p2_levels": ["SG5", "SG6", "SG7"],
+      "p2_allowed": "Use all three P2 lower levels, not only the reference's SG6 selection."
+    },
+    {
+      "id": "force_depth",
+      "figure": 13,
+      "pages": [29, 35],
+      "reference_title": "Stress Level by Loading Steps",
+      "title_correction": "TonF is axial force, not stress.",
+      "x": {"quantity": "axial force", "unit": "tf", "direction": "right", "labels_at": "top", "display_domain": [0, 450]},
+      "y": {"quantity": "depth", "unit": "m", "direction": "down", "display_domain": [0, 17]},
+      "color_by": "loading stage",
+      "loading_unloading": "Reference figure shows loading 40–400 tf only; P2 may include all 19 stages.",
+      "p2_status": "supported_as_reference_relative_estimate",
+      "p2_allowed": "Actual gauge points, upper/lower separate polylines, cell band and visible zero ticks.",
+      "p2_not_allowed": "Invented head, plate, toe or cell-boundary force points; connection through unmeasured cell region."
+    },
+    {
+      "id": "shaft_friction_depth",
+      "figure": 14,
+      "pages": [30, 35],
+      "reference_title": "Shaft Friction Levels by the Loading Steps",
+      "x": {"quantity": "segment-average shaft friction", "unit": "tf/m2", "direction": "right", "labels_at": "top", "display_domain": [0, 48]},
+      "y": {"quantity": "depth", "unit": "m", "direction": "down", "display_domain": [0, 17]},
+      "geometry": "constant per-interval steps",
+      "color_by": "loading stage",
+      "reference_note": "Visible legend omits 80 tf; page 35 table contains it.",
+      "p2_status": "supported_as_signed_segment_estimate",
+      "p2_intervals_m": [[9.7, 14.2], [14.2, 18.0], [18.0, 21.2], [24.1, 26.2], [26.2, 28.7]],
+      "unit_conversion": "1 tf/m² = 9.80665 kPa",
+      "p2_not_allowed": "Filling uninstrumented intervals or applying absolute value to negative friction; claiming local friction uniformity."
+    },
+    {
+      "id": "toe_pressure_load",
+      "figure": 15,
+      "pages": [27, 31, 35],
+      "reference_title": "Realized Bearing Capacity of the Toe",
+      "x": {"quantity": "nominal per-element load", "unit": "tf", "direction": "right", "display_domain": [75, 450]},
+      "y": {"quantity": "inferred toe bearing pressure", "unit": "tf/m2", "direction": "up", "display_domain": [0, 800]},
+      "loading_unloading": "One loading curve only, approximately 80–400 tf.",
+      "p2_status": "unavailable_as_verified_toe_result",
+      "missing_inputs": ["Verified toe load or approved last-gauge-to-toe equilibrium/extrapolation model", "Toe geometry/area", "Residual load, self-weight and buoyancy treatment", "P2 load convention"],
+      "safe_alternative": "SG7 strain/stress versus recorded load, explicitly labeled near-toe gauge result, not toe capacity.",
+      "not_the_same_as": "Toe resistance versus toe displacement/mobilization; that requires calibrated toe movement."
+    },
+    {
+      "id": "equivalent_top_down",
+      "figure": 16,
+      "pages": [31, 32],
+      "reference_title": "Equivalent Curve",
+      "x": {"quantity": "constructed combined/equivalent top-down load", "unit": "tf", "direction": "right", "display_domain": [0, 880]},
+      "y": {"quantity": "modeled signed displacement", "unit": "mm", "direction": "negative downward", "display_domain": [-11, 0]},
+      "loading_unloading": "Modeled loading curve only; no equivalent unloading branch shown.",
+      "construction_disclosed_by_reference": "Balance of upper/lower element load and displacement; polynomial interpolation table.",
+      "p2_status": "unavailable_as_verified_equivalent_curve",
+      "missing_inputs": ["Calibrated mapped upper/lower/top/toe displacement with stable reference corrections", "P2 cell load convention and separate resistance curves", "Documented compatible-displacement construction rule", "Elastic/composite stiffness and residual/weight/buoyancy treatment", "Interpolation model, degree, domain and validation"],
+      "p2_not_allowed": "Copying reference points, automatically doubling P2 recorded load, or promoting unvalidated Sheet2 fit as measured settlement."
+    }
+  ],
+  "annex_chart_families": [
+    {
+      "id": "sonic_integrity_profiles",
+      "pages": [41],
+      "panels": 3,
+      "x": ["arrival time ms", "relative energy dB", "waveform/diagnostic traces"],
+      "y": "depth m increasing downward",
+      "p2_status": "unavailable_no_matching_sonic_records"
+    },
+    {
+      "id": "hydraulic_pressure_load_calibration",
+      "pages": [46],
+      "x": "pressure bar increasing right",
+      "y": "load ton-f increasing upward",
+      "series": ["25mm stroke", "60mm stroke", "120mm stroke"],
+      "p2_status": "unavailable_no_verified_matching_P2_certificate_pressure_stroke",
+      "warning": "The reference's 2025 ACH-400 serial 9531 calibration cannot be adopted for the 2020 P2 experiment."
+    }
+  ],
+  "supporting_evidence_not_additional_experimental_curves": [
+    {"pages": [47, 48, 49, 50], "type": "crackmeter calibration tables/formulas", "p2_status": "reference_sensor_coefficients_not_applicable_without_identity_proof"},
+    {"pages": [51], "type": "strain gauge calibration table, application GF 3.304", "p2_status": "not_a_P2_sensor_specific_certificate"},
+    {"pages": [2, 7, 8, 45, 52], "type": "geological section, pile layout and borehole log", "p2_status": "reference_soil_and_geometry_not_transferable"},
+    {"pages": [36, 37], "type": "concrete strength certificate annex", "p2_status": "not_P2_modulus_evidence"}
+  ],
+  "reference_inconsistencies": [
+    {"pages": [27, 28, 35], "issue": "Toe formula uses epsilon5 while the lower-element gauge is SG6; toe-force reconstruction below the last gauge is not disclosed."},
+    {"pages": [35], "issue": "SG2 = 4.4 tf and SG3 = 1.0 tf at 40 tf nominal load produce a negative upper-element gradient, but the friction table gives positive 0.60 tf/m²; sign treatment is unexplained."},
+    {"pages": [25, 32, 33], "issue": "Summary labels appear to reverse peak top-plate and pile-top displacement identities relative to source table."},
+    {"pages": [20, 25], "issue": "Planned loading schedule/repeated steps differ from the consolidated recorded table; the protocol must not be copied to P2."},
+    {"pages": [5, 20, 32], "issue": "Narratives conflict on lower-element failure; they are not usable as P2 failure evidence."},
+    {"pages": [29], "issue": "Reference head/plate/toe endpoints are model/boundary values not supplied by P2 gauge readings."},
+    {"pages": [31, 32], "issue": "Polynomial degree/coefficients and full equivalent-curve construction protocol are not disclosed."}
+  ],
+  "implementation_rules": [
+    "Merge loading/unloading within each load-response channel in chronological stage order.",
+    "Upper/lower strain can share one selectable plot; upper/lower depth lines remain separated across cell.",
+    "Keep depth on the vertical axis increasing downward; no 90-degree axis rotation is needed for force/friction profiles.",
+    "Preserve actual signed values and source stage identities, including initial/final zero-load difference.",
+    "Do not copy the reference's cropped axes, incomplete legends, smoothed overshoot or unmeasured boundary points.",
+    "Unsupported graph families require explicit missing-input explanations, not fabricated curves."
+  ]
+}
