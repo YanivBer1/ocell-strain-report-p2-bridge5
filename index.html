@@ -45,7 +45,7 @@
   .export-chart:hover,.overlay-controls button:hover{background:#eaf4f1}
   .review-point{fill:white}.revision-date{font-size:13px;color:#d5f5c8;margin-bottom:12px}
   @media(max-width:950px){.stage-legend{grid-template-columns:repeat(3,minmax(0,1fr))}}
-  @media(max-width:600px){.stage-legend{grid-template-columns:repeat(2,minmax(0,1fr))}.overlay-panel{padding:12px}.chart-wrap{overflow-x:auto}.chart-wrap svg{min-width:560px}.chart-status{line-height:1.6}}
+  @media(max-width:600px){.stage-legend{grid-template-columns:repeat(2,minmax(0,1fr))}.overlay-panel{padding:12px}.chart-wrap{overflow:hidden}.chart-wrap svg{min-width:0;max-width:100%}.chart-status{line-height:1.6}}
   @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.chart-wrap .stage-series{transition:none}}
   @media print{
     @page{size:A4 landscape;margin:12mm}
@@ -178,10 +178,11 @@ const depthDomains={mean:Math.ceil(Math.max(...DATA.stages.flatMap(s=>s.levels.m
 function stageLabel(s){return `שלב ${s.id} · ${fmt(s.load,0)} tf · ${phaseHe(s.phase)}`;}
 function dash(s){return s.phase==='Unloading'?'8 5':s.phase==='Baseline'?'2 4':'';}
 function depthChart(key,stages,label,sensorLabels=false){
-  const z={w:780,h:600,l:76,r:56,t:44,b:58,iw:648,ih:498};
+  const mobile=window.matchMedia('(max-width:600px)').matches;
+  const z=mobile?{w:400,h:540,l:50,r:42,t:30,b:52,iw:308,ih:458}:{w:780,h:600,l:76,r:56,t:44,b:58,iw:648,ih:498};
   const maximum=depthDomains[key],step=key==='force'?250:50;
   const x=v=>z.l+v/maximum*z.iw,y=v=>z.t+v/30*z.ih;
-  let svg=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${z.w} ${z.h}" role="img" aria-label="${esc(label)}" data-x-min="0" data-x-max="${maximum}" data-y-min="0" data-y-max="30" style="font-family:Arial,sans-serif"><title>${esc(label)}</title><desc>Depth increases downward from zero. No measurement is invented at the pile head; upper and lower profiles are disconnected at the O-cell.</desc><rect width="780" height="600" fill="white"/>`;
+  let svg=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${z.w} ${z.h}" role="img" aria-label="${esc(label)}" data-x-min="0" data-x-max="${maximum}" data-y-min="0" data-y-max="30" style="font-family:Arial,sans-serif"><title>${esc(label)}</title><desc>Depth increases downward from zero. No measurement is invented at the pile head; upper and lower profiles are disconnected at the O-cell.</desc><rect width="${z.w}" height="${z.h}" fill="white"/>`;
   for(let v=0;v<=maximum;v+=step){const xx=x(v);svg+=`<line x1="${xx}" y1="${z.t}" x2="${xx}" y2="${y(30)}" stroke="#e2e8e6"/>${svgText(xx,y(30)+21,v,'text-anchor="middle" fill="#526773" font-size="14"')}`;}
   for(let v=0;v<=30;v+=5){const yy=y(v);svg+=`<line x1="${z.l}" y1="${yy}" x2="${x(maximum)}" y2="${yy}" stroke="#e2e8e6"/>${svgText(z.l-12,yy+5,v,'text-anchor="end" fill="#526773" font-size="14"')}`;}
   svg+=`<rect x="${z.l}" y="${y(22.9)}" width="${z.iw}" height="${y(23.3)-y(22.9)}" fill="#fce9dc"/><line x1="${z.l}" y1="${y(22.9)}" x2="${x(maximum)}" y2="${y(22.9)}" stroke="#cf936d" stroke-dasharray="4 4"/>`;
@@ -196,13 +197,13 @@ function depthChart(key,stages,label,sensorLabels=false){
       svg+=`<polyline points="${values.map(v=>`${x(v[key])},${y(v.depth)}`).join(' ')}" fill="none" stroke-width="2.2" stroke-dasharray="${dash(stage)}" stroke-linejoin="round"/>`;
       for(const v of values){
         svg+=`<circle cx="${x(v[key])}" cy="${y(v.depth)}" r="3.6" stroke-width="1.6" fill="${v.flag?'white':col}"><title>${esc(stageLabel(stage))} · ${v.name} · ${fmt(v.depth,1)} m · ${fmt(v[key],2)} ${key==='force'?'tf':'με'}${v.flag?' · לבדיקה':''}</title></circle>`;
-        if(sensorLabels)svg+=svgText(x(v[key])+9,y(v.depth)-9,`${v.name}${v.flag?'*':''}`,'stroke="none" fill="#31454d" font-size="13"');
+        if(sensorLabels&&!mobile)svg+=svgText(x(v[key])+9,y(v.depth)-9,`${v.name}${v.flag?'*':''}`,'stroke="none" fill="#31454d" font-size="13"');
       }
     }
     svg+='</g>';
   }
   svg+=svgText(z.l+z.iw/2,z.h-8,key==='force'?'אומדן כוח צירי (tf)':'ממוצע עיבור לחיצה (με)','text-anchor="middle" fill="#31454d" font-size="15" font-weight="700"');
-  svg+=`<text transform="translate(23 ${z.t+z.ih/2}) rotate(-90)" text-anchor="middle" fill="#31454d" font-size="15" font-weight="700">עומק מראש הכלונס (מטר)</text>`;
+  svg+=`<text transform="translate(${mobile?15:23} ${z.t+z.ih/2}) rotate(-90)" text-anchor="middle" fill="#31454d" font-size="15" font-weight="700">עומק מראש הכלונס (מטר)</text>`;
   return svg+'</svg>';
 }
 function renderOverlays(){
@@ -225,9 +226,9 @@ function renderProfile(stage){
   document.getElementById('selectedProfileTitle').textContent=`פרופיל כוח צירי · ${stageLabel(stage)}`;
 }
 function renderStrainChart(){
-  const z=chartFrame(780,500),loading=DATA.stages.filter(s=>s.phase!=='Unloading'),unloading=DATA.stages.filter(s=>s.id>=15),ymax=depthDomains.mean;
+  const z=window.matchMedia('(max-width:600px)').matches?{w:400,h:430,l:50,r:18,t:22,b:48,iw:332,ih:360}:chartFrame(780,500),loading=DATA.stages.filter(s=>s.phase!=='Unloading'),unloading=DATA.stages.filter(s=>s.id>=15),ymax=depthDomains.mean;
   const x=v=>z.l+v/900*z.iw,y=v=>z.t+z.ih-v/ymax*z.ih;
-  let svg=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${z.w} ${z.h}" role="img" aria-label="עיבור מול עומס, כולל העמסה ופריקה בכל שבעת המפלסים" data-x-min="0" data-y-min="0" style="font-family:Arial,sans-serif"><rect width="780" height="500" fill="white"/>`;
+  let svg=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${z.w} ${z.h}" role="img" aria-label="עיבור מול עומס, כולל העמסה ופריקה בכל שבעת המפלסים" data-x-min="0" data-y-min="0" style="font-family:Arial,sans-serif"><rect width="${z.w}" height="${z.h}" fill="white"/>`;
   for(let v=0;v<=ymax;v+=50){svg+=`<line x1="${z.l}" y1="${y(v)}" x2="${x(900)}" y2="${y(v)}" stroke="#dfe7e5"/>${svgText(z.l-10,y(v)+4,v,'text-anchor="end" fill="#526773" font-size="13"')}`;}
   for(let v=0;v<=900;v+=225){svg+=`<line x1="${x(v)}" y1="${z.t}" x2="${x(v)}" y2="${y(0)}" stroke="#e8eeec"/>${svgText(x(v),z.h-20,v,'text-anchor="middle" fill="#526773" font-size="13"')}`;}
   svg+=`<line x1="${x(0)}" y1="${y(0)}" x2="${x(900)}" y2="${y(0)}" stroke="#526773"/><line x1="${x(0)}" y1="${y(0)}" x2="${x(0)}" y2="${y(ymax)}" stroke="#526773"/>`;
@@ -261,6 +262,7 @@ function exportSvg(id){
   const blob=new Blob([new XMLSerializer().serializeToString(copy)],{type:'image/svg+xml;charset=utf-8'}),url=URL.createObjectURL(blob),link=document.createElement('a');link.href=url;link.download=`P2-Bridge5-${id}.svg`;link.click();setTimeout(()=>URL.revokeObjectURL(url),1000);
 }
 renderStageLegend();renderOverlays();
+window.matchMedia('(max-width:600px)').addEventListener('change',()=>{renderOverlays();renderStrainChart();renderProfile(DATA.stages[Number(document.getElementById('stageSelect').value)]);});
 document.querySelectorAll('[data-export]').forEach(b=>b.addEventListener('click',()=>exportSvg(b.dataset.export)));
 document.getElementById('printReport').addEventListener('click',()=>window.print());
 let stagesBeforePrint,detailsBeforePrint;
